@@ -23,6 +23,11 @@ default: &default
   host: localhost
   username: jasonandrada
   password:
+  username: kaitlynmohr
+  password:
+  username: student_06
+  password:
+
 
 development:
   <<: *default
