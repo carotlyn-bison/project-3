@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
 
  def new
-    #allows us to pre-set the post_id for any new comments that we make
+    #preset book id for any new reviews
     @review = Review.new
     @review.book_id = Book.show.id
   end
@@ -43,4 +43,3 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 end
-
