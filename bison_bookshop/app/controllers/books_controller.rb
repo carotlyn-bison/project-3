@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    if !user_sign_in?
+    if !user_signed_in?
       redirect_to new_user_session_path
     else
     @books = Book.all #returning a book that is searched
