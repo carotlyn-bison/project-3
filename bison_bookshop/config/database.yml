@@ -28,7 +28,6 @@ default: &default
   username: student_06
   password:
 
-
 development:
   <<: *default
   database: bison_bookshop_development
