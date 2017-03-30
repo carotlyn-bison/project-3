@@ -14,3 +14,10 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Limelight|Lobster|Questrial|Rajdhani');
+h1,
+h2,
+h3,
+p,
+{
+  font-family: Lobster;
+}
