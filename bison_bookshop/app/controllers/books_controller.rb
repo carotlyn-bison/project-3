@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id]) #individual book and the reviews attached
     @review = Review.new()
-    @review.book_id=@book.id
+    # @review.book_id = @book.id
   end
 
   def edit

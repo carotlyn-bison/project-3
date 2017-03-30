@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   root to: "books#index"
 
   get "books/index", to: "books#index"
-  get "books/show", to: "books#show"
+  get "books/:id", to: "books#show"
   get "books/edit", to: "books#edit"
   get "books/new", to: "books#new"
 
   get "reviews/index", to: "reviews#index"
-  get "reviews/show", to: "reviews#show"
+  get "reviews/:id", to: "reviews#show"
   get "reviews/edit", to: "reviews#edit"
   get "reviews/new", to: "reviews#new"
 

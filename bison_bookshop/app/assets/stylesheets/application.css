@@ -23,21 +23,32 @@ p,
 }
 
 /*devise notification styling */
-
-.devise{
+.header{
 display: flex;
-flex-direction: column;
-height: 20%;
-width: 30%;
-border: solid,gray;
-border: solid;
-border-color: aqua;
-text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(95, 158, 160, 0.31);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(230, 214, 175, 0.34);
+}
+.devise
+{
+
 }
 
 
 
-.field{
+.form-group{
+
+}
+.form-control{
+  display: flex;
+  flex-direction: row-reverse;
 
 }
 
@@ -46,7 +57,7 @@ text-align: center;
 
 }
 
-.notice{
+p.notice{
 
 }
 
@@ -62,6 +73,6 @@ text-align: center;
 }
 
 #alert{
-  border: 2px, solid, red;
+    border: solid;
 
 }
