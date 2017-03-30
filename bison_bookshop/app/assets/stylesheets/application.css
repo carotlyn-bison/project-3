@@ -14,3 +14,56 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Limelight|Lobster|Questrial|Rajdhani');
+h1,
+h2,
+h3,
+p,
+{
+  font-family: Lobster;
+}
+
+
+.header{
+display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(95, 158, 160, 0.31);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(230, 214, 175, 0.34);
+}
+
+.login {
+    font-family: Limelight;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: yellow;
+}
+
+/*devise form styling*/
+.form-control {
+  background-color: white;
+  padding: 3%;
+  margin: 3%;
+
+}
+
+input {
+  background-color: white;
+  -webkit-background-color: white;
+}
+
+.form-container {
+    height: 70%;
+    width: 30%;
+    border: solid;
+    padding: 3%;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
