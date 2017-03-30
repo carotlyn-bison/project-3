@@ -22,7 +22,7 @@ p,
   font-family: Lobster;
 }
 
-/*devise notification styling */
+
 .header{
 display: flex;
     flex-direction: column;
@@ -44,52 +44,26 @@ body {
     text-align: center;
     background-color: yellow;
 }
-.devise{
+
+/*devise form styling*/
+.form-control {
+  background-color: white;
+  padding: 3%;
+  margin: 3%;
 
 }
 
-.row {
-  background-color: coral;
-  display: flex;
-  flex-direction: row-reverse;
-  margin: auto;
-  padding: 5%;
-  height: 189px;
-  width: 20%;
+input {
+  background-color: white;
+  -webkit-background-color: white;
 }
 
-
-
-.form-group{
-
-}
-.form-control{
-  display: flex;
-  flex-direction: row-reverse;
-
-}
-
-.actions{
-
-
-}
-
-p.notice{
-
-}
-
-
-#notice{
-  border: 2px, solid, black;
-
-
-}
-
-.alert{
-
-}
-
-#alert{
+.form-container {
+    height: 70%;
+    width: 30%;
     border: solid;
-
+    padding: 3%;
+    position: absolute;
+    top: 20%;
+    left: 40%;
 }
