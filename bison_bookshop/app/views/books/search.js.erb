@@ -1,8 +1,13 @@
 $(document).ready(function() {
 
-('<% @resp.all %>').forEach(function(book){
-  $('body').append(book)
-})
+// ('<%= @resp.first %>').forEach(function(book){
+//   $('body').append(book.title)
+//   $('body').append(book.authors)
+// });
 
-  // $('body').append('<%= @resp.each_with_index %>');
+<% @resp.each do |book| %>
+$('body').append(book[:title])
+<% end %>
+
+  // $('body').append('<%= @resp.first.title %>');
 }) //end of document.ready
