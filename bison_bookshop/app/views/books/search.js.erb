@@ -1,0 +1,8 @@
+$(document).ready(function() {
+
+('<% @resp.all %>').forEach(function(book){
+  $('body').append(book)
+})
+
+  // $('body').append('<%= @resp.each_with_index %>');
+}) //end of document.ready
