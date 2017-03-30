@@ -1,0 +1,8 @@
+$(document).ready(function() {
+
+
+  $('body').append('<div class ="more-bitches">');
+  $('.more-bitches').append('<% @resp.each do |book| %> <div><%= book.title %><br><%= book.authors %><br><img src=<%= book.image_link(:zoom => 5) %> /></div><% end %>');
+
+  // $('body').append('<%= @resp.each_with_index %>');
+}) //end of document.ready
