@@ -1,14 +1,17 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
   def index
     if !user_signed_in?
       redirect_to new_user_session_path
     else
-    @books = GoogleBooks.search(title)
+    @books = Book.all
+    @resp = GoogleBooks.search(params[:title])
     #setting up an AJAX call in the backend.
-      response_to do |format|
+    #thank you Sabrina, you life saver.
+      respond_to do |format|
         format.html
-        format.js {render json: @books, content_type: 'text/json'}
+        format.json {render json: @resp, content_type: 'text/json'}
       end
     end
   end
@@ -43,10 +46,14 @@ class BooksController < ApplicationController
       redirect_back fallback_location: :book
     end
   end
+  def search
+
+    end
   private
   def set_book
-    @book = Book.find(params[:id])
+    @book = Book.find(params[:title])
   end
   def book_params
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :users_id)
+  end
 end

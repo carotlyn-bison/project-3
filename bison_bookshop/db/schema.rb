@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329193328) do
+ActiveRecord::Schema.define(version: 20170329223349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,19 +23,26 @@ ActiveRecord::Schema.define(version: 20170329193328) do
     t.string   "buy_link"
     t.text     "description"
     t.string   "image"
-    t.integer  "users_id"
-    t.index ["users_id"], name: "index_books_on_users_id", using: :btree
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_books_on_user_id", using: :btree
+  end
+
+  create_table "books_users", id: false, force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "user_id", null: false
+    t.index ["book_id"], name: "index_books_users_on_book_id", using: :btree
+    t.index ["user_id"], name: "index_books_users_on_user_id", using: :btree
   end
 
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.integer  "out_of_five"
     t.text     "content"
     t.integer  "books_id"
     t.index ["books_id"], name: "index_reviews_on_books_id", using: :btree
-    t.index ["users_id"], name: "index_reviews_on_users_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,13 +60,6 @@ ActiveRecord::Schema.define(version: 20170329193328) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "users_books", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
-    t.index ["book_id"], name: "index_users_books_on_book_id", using: :btree
-    t.index ["user_id"], name: "index_users_books_on_user_id", using: :btree
   end
 
 end
