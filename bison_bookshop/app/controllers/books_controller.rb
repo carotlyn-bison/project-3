@@ -40,17 +40,15 @@ class BooksController < ApplicationController
     end
   end
   def search
-    @resp = GoogleBooks.search(params[:title]).to_a
-    puts @resp
+    @resp = GoogleBooks.search(params[:title])
     #setting up an AJAX call in the backend.
     #thank you Sabrina, you life saver.
-    render search
-      respond_to do |format|
+    respond_to do |format|
         format.html {render search}
         format.json {render json: @resp, content_type: 'text/json'}
-        format.js {render json: @resp, content_type: 'text/json'}
-      end
+        format.js
     end
+  end
   private
   def set_book
     @book = Book.find(params[:title])
