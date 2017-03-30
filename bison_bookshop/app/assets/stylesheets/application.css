@@ -21,3 +21,47 @@ p,
 {
   font-family: Lobster;
 }
+
+/*devise notification styling */
+
+.devise{
+display: flex;
+flex-direction: column;
+height: 20%;
+width: 30%;
+border: solid,gray;
+border: solid;
+border-color: aqua;
+text-align: center;
+}
+
+
+
+.field{
+
+}
+
+.actions{
+
+
+}
+
+.notice{
+
+}
+
+
+#notice{
+  border: 2px, solid, black;
+
+
+}
+
+.alert{
+
+}
+
+#alert{
+  border: 2px, solid, red;
+
+}
