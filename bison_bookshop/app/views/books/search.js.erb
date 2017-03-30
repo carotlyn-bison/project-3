@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
-('<% @resp.all %>').forEach(function(book){
-  $('body').append(book)
-})
+
+  $('body').html('<% @resp.each do |book| %> <%= book.title %><br><%= book.authors %><br><% end %>');
 
   // $('body').append('<%= @resp.each_with_index %>');
 }) //end of document.ready
