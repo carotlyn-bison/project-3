@@ -36,9 +36,26 @@ body {
     width: 100vw;
     background-color: rgba(230, 214, 175, 0.34);
 }
-.devise
-{
 
+.login {
+    font-family: Limelight;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: yellow;
+}
+.devise{
+
+}
+
+.row {
+  background-color: coral;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  padding: 5%;
+  height: 189px;
+  width: 20%;
 }
 
 

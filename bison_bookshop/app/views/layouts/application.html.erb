@@ -7,35 +7,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class ="title">
-       <h1>Bison Bookshelf</h1>
-  </div>
 
-  <body>
-  <div class="Container"
+<body>
+<div class="container">
 
-<div class ="devise">
-
-
-  <% if user_signed_in? %>
-
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-
+<div class="login">
+<header class="title"> Bison Bookshelf </header>
+<% if user_signed_in? %>
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 <% else %>
-
-  <%= link_to('Login', new_user_session_path)  %>
-
+<%= link_to('Login', new_user_session_path)  %>
 <% end %>
+</div>
 
 
 
-        <div id ="notice">
-          <p class ="notice"><%= notice %></p>
-        </div>
-
-        <div id ="alert">
-          <p class="alert"><%= alert %></p>
-       </div>
 </div>
 
 
