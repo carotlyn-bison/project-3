@@ -1,0 +1,8 @@
+$(document).ready(function() {
+  console.log('bitches');
+  let $bitches = $('<%= j render "search_form" %>')
+  $bitches.ajaxSuccess((e, data, status, xhr) => {
+    e.preventDefault();
+    console.log(data);
+  });
+}) //end of document.ready
