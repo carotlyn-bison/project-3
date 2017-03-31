@@ -7,7 +7,11 @@ $(document).ready(function() {
 
 //add button will eventually post our stuff to our database
 $('.add').on('click', function(e) {
-  console.log($('.book-title').text().split(/[a-z][A-Z]+/))
+  //trying some crazy RegEx stuff to split the long-ass author,
+  //description, and title strings
+  //http://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
+  console.log($('.book-author').text().split(/[a-z](?=[A-Z]+)/g));
+  console.log($('.book-title').text().split(/[a-z](?=[A-Z]+)/g));
    e.preventDefault();
         //weird bug where titles or authors aren't separating
         bookData = {
