@@ -1,8 +1,27 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
-
-<div class = "bookshelf">
-
-
-
+<div class="single-book">
+    <h1><%= @book.title %></h1>
+    <p>By: <%= @book.author %></p>
+    <div><img src="<%= @book.image %>" /></div>
+    <p><%= @book.description %></p>
+    <p><%= link_to @book.buy_link %></p>
+</div>
+<div class="reviews">
+  <h2>Reviews:</h2>
+  <div class="reviews-show">
+    <ul>
+      <% @book.reviews.each do |review| %>
+      <li>
+        <%= review.content %>
+        <%= review.out_of_five "/5" %>
+        <%= form_for(review, method: :delete, data: { confirm: "Are you sure?" }) do |f| %>
+          <%= f.submit "Delete"%>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="reviews-create">
+    <h2>Leave a comment: </h2>
+      <%= render "reviews/reviews_form", review: @review %>
+  </div>
 </div>

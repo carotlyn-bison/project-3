@@ -1,8 +1,37 @@
 $(document).ready(function() {
 
+//resets the search results and gives you a fresh set of results
+  $('.search-results').empty()
+//this is the success function of the search_form.html.erb AJAX call
+  $('.search-results').append('<% @resp.each do |book, index| %> <div class="search-result"><div class="book-title"><%= book.title %></div><br><div class="book-author"><%= book.authors %></div><br><div><img src="<%= book.image_link(:zoom => 5) %>" class="book-image" /></div><br><div class="book-description"><%= book.description %></div><br><div><a href="<%= book.info_link %>" class="book-buy-link" >Buy This Book</a></div><br><button class="add">Add To Bookself</button></div><% end %>');
 
-  $('body').append('<div class ="more-bitches">');
-  $('.more-bitches').append('<% @resp.each do |book| %> <div><%= book.title %><br><%= book.authors %><br><img src=<%= book.image_link(:zoom => 5) %> /></div><% end %>');
-
-  // $('body').append('<%= @resp.each_with_index %>');
+//add button will eventually post our stuff to our database
+$('.add').on('click', function(e) {
+  //trying some crazy RegEx stuff to split the long-ass author,
+  //description, and title strings
+  //http://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
+  console.log($('.book-author').text().split(/(?=[A-Z]+)/));
+  console.log($('.book-title').text().split(/(?=[A-Z]+)/));
+   e.preventDefault();
+        //weird bug where titles or authors aren't separating
+        bookData = {
+          title: $('.book-title').text(),
+          author: $('.book-author').text(),
+          image: $('.book-image').attr('src'),
+          description: $('.book-description').text(),
+          buy_link: $('.book-buy-link').attr('href'),
+        };
+        // console.log(bookData)
+        $.ajax({
+          type: "POST",
+          url: "/books",
+          data: bookData,
+          success: function (data) {
+              console.log(data);
+          },
+        error: function (error){
+          console.log('AJAX POST Error: ', error);
+      }//end of error function
+    });//end of AJAX POST
+  }); //end of add button click listener
 }) //end of document.ready
