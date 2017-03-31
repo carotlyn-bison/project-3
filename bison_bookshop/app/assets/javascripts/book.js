@@ -82,4 +82,4 @@ $(document).ready(function() {
     }) //end of AJAX book POST method
   } //end of saveBook function
 >>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
-}) //end of document.ready
+}); //end of document.ready
