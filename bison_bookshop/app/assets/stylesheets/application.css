@@ -58,19 +58,56 @@ height: 90px;
 background-color: rgba(95, 158, 160, 0.31);
 }
 
+.button-div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-nav {
+  margin: 0 5px 0 5px;
+}
+
 /* Book Index Page*/
 
 #bookIndex {
   margin: 20px;
 }
 
-.serach-form {
-
+.search-container {
+  background-color: rgba(0,0,0, 0.5);
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin: 5px auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-/* Video STyling for Book Index Page*/
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+  .search-result {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    padding: 5px 20px 5px 20px;
+  }
+
+  .search-result img{
+    max-width: 100px;
+  }
+
+/* Video Styling for Book Index Page*/
 #video-container {
-  background-image: url(intro-stop.png);
+  background-image: url(intro-stop.jpg);
   left: 0%;
   height: 100vh;
   overflow: hidden;

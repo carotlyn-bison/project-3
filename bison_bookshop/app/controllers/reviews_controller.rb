@@ -2,14 +2,16 @@ class ReviewsController < ApplicationController
     before_action :set_review, only: [:edit, :update, :destroy]
 
 
- def new
+  def new
     #allows us to pre-set the post_id for any new comments that we make
-    @review = Review.new
-    @review.book_id = Book.show.id
-  end
-
-
-
+    #preset book id for any new reviews
+     @review = Review.new
+     @review.book_id = Book.show.id
+   end
+ @@ -43,4 +43,3 @@ def set_comment
+     @review = Review.find(params[:id])
+   end
+ end
 
   def create
     @review = Review.new(review_params)
