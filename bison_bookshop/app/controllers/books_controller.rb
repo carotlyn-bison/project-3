@@ -41,7 +41,7 @@ class BooksController < ApplicationController
     end
   end
   def search
-    @resp = GoogleBooks.search(params[:title])
+    @resp = HTTParty.get(GoogleBooks.search(params[:title]))
     #setting up an AJAX call in the backend.
     #thank you Sabrina, you life saver.
     respond_to do |format|

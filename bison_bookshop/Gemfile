@@ -10,6 +10,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 #google books gem added by Jason
 gem 'googlebooks'
 
+gem 'httparty'
+
 #gem devise added by Kait
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

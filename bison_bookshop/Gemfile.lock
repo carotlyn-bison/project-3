@@ -180,6 +180,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   googlebooks
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
