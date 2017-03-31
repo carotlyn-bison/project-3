@@ -22,24 +22,30 @@ $(document).ready(function() {
       let title = $('<p>');
       title.text(thing.volumeInfo.title);
       newDiv.append(title);
-      let author = $('<div>');
-      thing.volumeInfo.authors.forEach(function(writer) {
-        author.append(writer)
-      }) //end of authors forEach
-      newDiv.append(author);
-      let image = $('<img>')
+      let author = $('<div>').addClass('writer');
+      author.text(thing.volumeInfo.authors[0]);
+      newDiv.append(author)
+      let image = $('<img>');
       image.attr('src', thing.volumeInfo.imageLinks.thumbnail);
       newDiv.append(image);
       let buyLink = $('<a>');
-      buyLink.attr('href', thing.saleInfo.buyLink).text('Buy This Book');
+      if (thing.saleInfo.buyLink) {
+        buyLink.attr('href', thing.saleInfo.buyLink).text('Buy This Book');
+      } else {
+        buyLink.text('Sorry, this book is not available for purchase');
+      }
       newDiv.append(buyLink);
-      let description = $('<div>');
-      description.text(thing.volumeInfo.description);
+      let description = $('<div>').addClass('description');
+      if (thing.volumeInfo.description) {
+        description.text(thing.volumeInfo.description);
+      } else {
+        description.text('None')
+      }
       newDiv.append(description);
       $('.search-results').append(newDiv);
       let save = $('<button>');
-      save.text('Add to Bookshelf?').attr('data-id', thing.user_id).click(function() {
-        saveBook(title.text, author.text, image.attr('src'), description.text, buyLink.attr('href'), $('.search-results').attr('data-id'));
+      save.text('Add to Bookshelf?').click(function() {
+        saveBook(thing.volumeInfo.title, thing.volumeInfo.authors[0], thing.volumeInfo.imageLinks.thumbnail, thing.volumeInfo.description, thing.saleInfo.buyLink, $('.search-results').attr('data-id'));
       }) //end of save function
       newDiv.append(save)
     }); //end of array.forEach
@@ -49,19 +55,21 @@ $(document).ready(function() {
       type: 'POST',
       url: '/books',
       data: {
-        title: title,
-        author: author,
-        image: image,
-        description: description,
-        buy_link: buyLink,
-        user_id: user_id
+        book: {
+          title: title,
+          author: author,
+          image: image,
+          description: description,
+          buy_link: buyLink,
+          user_id: user_id
+        }
       },
       success: function(data) {
-        window.location.replace('/books/' + data.title);
+        console.log(data)
       },
       error: function(error) {
         console.log('AJAX POST Error: ', error)
       }
-    })
-  }
+    }) //end of AJAX book POST method
+  } //end of saveBook function
 }) //end of document.ready

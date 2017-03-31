@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js
   def index
     if !user_signed_in?
@@ -25,8 +25,11 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   def create
+    puts book_params
+
     @book = Book.new(book_params)
     if @book.save
+      puts "OK"
       redirect_back fallback_location: :root
     else
       redirect_to :book
@@ -47,7 +50,7 @@ class BooksController < ApplicationController
   end
   private
   def set_book
-    @book = Book.find(params[:title])
+    @book = Book.find(params[:id])
   end
   def book_params
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id)
