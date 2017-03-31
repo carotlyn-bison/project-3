@@ -51,11 +51,11 @@ button a{
 
 
 .header{
-    background-color: rgba(95, 158, 160, 0.31);
-    display: flex;
-    flex-direction: column;
-    height: 90px;
-    width: 100%;
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 90px;
+background-color: rgba(95, 158, 160, 0.31);
 }
 
 /* Book Index Page*/
@@ -96,24 +96,105 @@ video {
     background-color: yellow;
 }
 
+input.form-control {
+  color: #777;
+      padding-left: 10px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 18px;
+      width: 290px;
+      height: 35px;
+      border: 1px solid #c7d0d2;
+      border-radius: 2px;
+      box-shadow: inset 0 1.5px 3px
+      rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+
+}
+
 .form-control {
   background-color: white;
   padding: 3%;
   margin: 3%;
-
 }
 
-input {
-  background-color: white;
-  -webkit-background-color: white;
+p.alert{
+  color: red;
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+
+.login-container {
+      position: absolute;
+      width: 340px;
+      height: 420px;
+      top: 50%;
+      left: 50%;
+      margin-top: -140px;
+      margin-left: -170px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    animation-name: bounceIn;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
 }
 
 .form-container {
-    height: 70%;
-    width: 30%;
-    border: solid;
-    padding: 3%;
-    position: absolute;
-    top: 20%;
-    left: 40%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.btn{
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #555;
+  margin-bottom: -20px;
+
+
+}
+
+.log{
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #555;
+  margin-bottom: -20px;
+}
+
+label{
+    font-family: Rajdhani;
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.field{
+
+
+}
+
+.control-label{
+
+}
+
+.remember{
+  display: block;
+  margin-left: 16px;
+  margin-top: -17px;
+  }
+
+.action{
+
 }
