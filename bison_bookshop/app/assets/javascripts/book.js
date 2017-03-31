@@ -37,6 +37,11 @@ $(document).ready(function() {
       desc.text(thing.volumeInfo.description);
       newDiv.append(desc);
       $('.search-results').append(newDiv);
+
     })
   } //end of loop function
+
+
+
+
 }) //end of document.ready
