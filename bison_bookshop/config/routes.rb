@@ -5,10 +5,13 @@ Rails.application.routes.draw do
 
   root to: "books#index"
 
-  get "books/index", to: "books#index" #, as: :books
-  get "books/show", to: "books#show", as: :book
-  get "books/edit", to: "books#edit", as: :edit_book
+  get "/books", to: "books#index" #, as: :books
   get "books/new", to: "books#new", as: :new_book
+  get "books/search", to: "books#search", as: :search_books
+  get "books/:id", to: "books#show", as: :book
+  get "books/:id/edit", to: "books#edit", as: :edit_book
+  post "/books", to: "books#create" #no helper bc we're posting
+
 
   get "reviews/index", to: "reviews#index" #, as: :reviews
   get "reviews/show", to: "reviews#show", as: :review

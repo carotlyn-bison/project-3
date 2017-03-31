@@ -1,2 +1,12 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<div id="bookIndex">
+  <scrolling="yes">
+  <div class="search-form">
+    <%= render "search_form" %>
+  </div>
+  <div class="search-results">
+  </div>
+  <div id="video-container">
+    <%= video_tag "intro-clip.mp4", autoplay: true, poster: "intro-stop.jpg" %>
+  </div>
+</div>
+
