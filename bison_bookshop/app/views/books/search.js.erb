@@ -10,8 +10,8 @@ $('.add').on('click', function(e) {
   //trying some crazy RegEx stuff to split the long-ass author,
   //description, and title strings
   //http://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
-  console.log($('.book-author').text().split(/[a-z](?=[A-Z]+)/g));
-  console.log($('.book-title').text().split(/[a-z](?=[A-Z]+)/g));
+  console.log($('.book-author').text().split(/(?=[A-Z]+)/));
+  console.log($('.book-title').text().split(/(?=[A-Z]+)/));
    e.preventDefault();
         //weird bug where titles or authors aren't separating
         bookData = {
@@ -21,7 +21,7 @@ $('.add').on('click', function(e) {
           description: $('.book-description').text(),
           buy_link: $('.book-buy-link').attr('href'),
         };
-        console.log(bookData)
+        // console.log(bookData)
         $.ajax({
           type: "POST",
           url: "/books",
