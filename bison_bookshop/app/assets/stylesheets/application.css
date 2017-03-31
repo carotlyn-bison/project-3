@@ -13,30 +13,89 @@
  *= require_tree .
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Limelight|Lobster|Questrial|Rajdhani');
-h1,
-h2,
-h3,
-p,
-{
-  font-family: Lobster;
+
+body {
+    background: #313745;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+  align-items: center;
+  background-color: #474e60;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 2px 2px #313745;
+}
+
+button:hover{
+  background-color: #313745;
+  box-shadow: 2px 2px grey;
+}
+
+button a{
+  color: white;
+  text-decoration: none;
 }
 
 
 .header{
+<<<<<<< HEAD
 display: flex;
 flex-direction: column;
 width: 100%;
 height: 90px;
 background-color: rgba(95, 158, 160, 0.31);
+=======
+    background-color: rgba(95, 158, 160, 0.31);
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    width: 100%;
+>>>>>>> 2752dc90826bd4faeda3684eaec69369a61ff4b8
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(230, 214, 175, 0.34);
+/* Book Index Page*/
+
+#bookIndex {
+  margin: 20px;
 }
 
+.serach-form {
+
+}
+
+/* Video STyling for Book Index Page*/
+#video-container {
+  background-image: url(intro-stop.png);
+  left: 0%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  z-index: -100;
+}
+
+video {
+  position: absolute;
+  margin-top: -10px;
+  width: 102vw;
+  z-index: -100;
+}
+
+/*devise form styling*/
 .login {
     font-family: Limelight;
     height: 10%;
@@ -45,6 +104,7 @@ body {
     background-color: yellow;
 }
 
+<<<<<<< HEAD
 /*devise form styling*/
 input.form-control {
   color: #777;
@@ -60,6 +120,12 @@ input.form-control {
       rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
 
 }
+=======
+.form-control {
+  background-color: white;
+  padding: 3%;
+  margin: 3%;
+>>>>>>> 2752dc90826bd4faeda3684eaec69369a61ff4b8
 
 p.alert{
   color: red;

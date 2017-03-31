@@ -8,7 +8,10 @@ end
 #dotenv-rails added by Jason
 gem 'dotenv-rails', groups: [:development, :test]
 #google books gem added by Jason
-gem 'googlebooks'
+# fuck googlebooks
+# gem 'googlebooks'
+
+gem 'httparty'
 
 #gem devise added by Kait
 gem 'devise'
