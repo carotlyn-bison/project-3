@@ -51,12 +51,30 @@ button a{
 
 
 .header{
+<<<<<<< HEAD
     background-color: rgba(95, 158, 160, 0.31);
     display: flex;
     flex-direction: column;
     height: 90px;
     width: 100%;
 
+=======
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 90px;
+background-color: rgba(95, 158, 160, 0.31);
+}
+
+.button-div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-nav {
+  margin: 0 5px 0 5px;
+>>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 }
 
 /* Book Index Page*/
@@ -65,13 +83,40 @@ button a{
   margin: 20px;
 }
 
-.serach-form {
-
+.search-container {
+  background-color: rgba(0,0,0, 0.5);
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin: 5px auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-/* Video STyling for Book Index Page*/
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+  .search-result {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    padding: 5px 20px 5px 20px;
+  }
+
+  .search-result img{
+    max-width: 100px;
+  }
+
+/* Video Styling for Book Index Page*/
 #video-container {
-  background-image: url(intro-stop.png);
+  background-image: url(intro-stop.jpg);
   left: 0%;
   height: 100vh;
   overflow: hidden;
@@ -101,8 +146,11 @@ video {
     background-color: yellow;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 input.form-control {
   color: #777;
       padding-left: 10px;
@@ -118,6 +166,14 @@ input.form-control {
 
 }
 
+<<<<<<< HEAD
+=======
+.form-control {
+  background-color: white;
+  padding: 3%;
+  margin: 3%;
+}
+>>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 
 p.alert{
   color: red;
@@ -127,7 +183,6 @@ p.alert{
   font-size: 14px;
   letter-spacing: 0.1em;
 }
-
 
 
 .login-container {
@@ -219,6 +274,7 @@ label{
 
 .action{
 
+<<<<<<< HEAD
 }
 
 
@@ -406,4 +462,6 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right;
+=======
+>>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 }
