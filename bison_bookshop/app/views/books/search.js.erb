@@ -3,8 +3,8 @@ $(document).ready(function() {
 //resets the search results and gives you a fresh set of results
   $('.more-bitches').empty()
 //this is the success function of the search_form.html.erb AJAX call
-  $('body').append('<div class ="more-bitches">');
-  $('.more-bitches').append('<% @resp.each do |book, index| %> <div><div class="book-title"><%= book.title %></div><br><div class="book-author"><%= book.authors %></div><br><div><img src="<%= book.image_link(:zoom => 5) %>" class="book-image" /></div><br><div class="book-description"><%= book.description %></div><br><div><a href="<%= book.info_link %>" class="book-buy-link" >Buy This Book</a></div><br><button class="add">Add To Bookself</button></div><% end %>');
+  $('.search-results').append('<div class ="more-bitches">');
+  $('.more-bitches').append('<% @resp.each do |book, index| %> <div class="search-result"><div class="book-title"><%= book.title %></div><br><div class="book-author"><%= book.authors %></div><br><div><img src="<%= book.image_link(:zoom => 5) %>" class="book-image" /></div><br><div class="book-description"><%= book.description %></div><br><div><a href="<%= book.info_link %>" class="book-buy-link" >Buy This Book</a></div><br><button class="add">Add To Bookself</button></div><% end %>');
 
 //add button will eventually post our stuff to our database
 $('.add').on('click', function(e) {
