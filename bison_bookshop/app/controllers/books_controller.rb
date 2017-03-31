@@ -1,3 +1,4 @@
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:edit, :update, :destroy]
   respond_to :html, :js
