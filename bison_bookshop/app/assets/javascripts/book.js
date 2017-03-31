@@ -72,9 +72,7 @@ $(document).ready(function() {
       }
     }) //end of AJAX book POST method
   } //end of saveBook function
-<<<<<<< HEAD
->>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
+
 }); //end of document.ready
-=======
-}) //end of document.ready
->>>>>>> d678e8d892ba130c00e797f70c60d3c68b19a5f9
+
+
