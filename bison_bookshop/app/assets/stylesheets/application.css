@@ -64,9 +64,31 @@ background-color: rgba(95, 158, 160, 0.31);
   margin: 20px;
 }
 
-.serach-form {
-
+.search-container {
+  position: relative;
+  max-width: 95%;
+  height: 75%;
+  margin: 5px auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
+.search-results {
+  height: 75%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 90%;
+}
+
+  .search-result {
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
 /* Video STyling for Book Index Page*/
 #video-container {
