@@ -13,11 +13,21 @@
 <body>
 <nav>
   <header class="title">Bison Bookshelf</header>
-  <% if user_signed_in? %>
-    <button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
-    <% else %>
-    <button><%= link_to('Login', new_user_session_path)  %></button>
-  <% end %>
+  <div class="button-div">
+    <div class="button-nav">
+      <button><%= link_to "Home", books_path %></button>
+    </div>
+    <div class="button-nav">
+      <button><%= link_to "Your Bookself" %></button>
+    </div>
+    <div class="button-nav">
+      <% if user_signed_in? %>
+        <button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+        <% else %>
+        <button><%= link_to('Login', new_user_session_path)  %></button>
+      <% end %>
+    </div>
+  </div>
 </nav>
 
     <%= yield %>

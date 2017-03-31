@@ -58,6 +58,16 @@ height: 90px;
 background-color: rgba(95, 158, 160, 0.31);
 }
 
+.button-div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-nav {
+  margin: 0 5px 0 5px;
+}
+
 /* Book Index Page*/
 
 #bookIndex {
@@ -65,34 +75,39 @@ background-color: rgba(95, 158, 160, 0.31);
 }
 
 .search-container {
+  background-color: rgba(0,0,0, 0.5);
   position: relative;
-  max-width: 95%;
-  height: 75%;
+  width: 90%;
+  height: 400px;
   margin: 5px auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
 }
 
 .search-results {
-  height: 75%;
-  box-sizing: border-box;
-  white-space: nowrap;
-  overflow-x: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  overflow-x: scroll;
   overflow-y: hidden;
-  width: 90%;
 }
 
   .search-result {
-    display: inline-block;
-    width: 100px;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    padding: 5px 20px 5px 20px;
   }
 
-/* Video STyling for Book Index Page*/
+  .search-result img{
+    max-width: 100px;
+  }
+
+/* Video Styling for Book Index Page*/
 #video-container {
-  background-image: url(intro-stop.png);
+  background-image: url(intro-stop.jpg);
   left: 0%;
   height: 100vh;
   overflow: hidden;
