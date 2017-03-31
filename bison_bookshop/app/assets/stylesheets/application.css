@@ -25,10 +25,10 @@ p,
 
 .header{
 display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 90px;
-    background-color: rgba(95, 158, 160, 0.31);
+flex-direction: column;
+width: 100%;
+height: 90px;
+background-color: rgba(95, 158, 160, 0.31);
 }
 
 body {
@@ -47,22 +47,35 @@ body {
 
 /*devise form styling*/
 input.form-control {
-  background-color: white;
-  padding: 3%;
-  margin: 3%;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  background-color: white;
-  font-size: 12px;
-  outline: none;
+  color: #777;
+      padding-left: 10px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 18px;
+      width: 290px;
+      height: 35px;
+      border: 1px solid #c7d0d2;
+      border-radius: 2px;
+      box-shadow: inset 0 1.5px 3px
+      rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
 
+}
+
+p.alert{
+  color: red;
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
 }
 
 
 
 .login-container {
-      position: fixed;
+      position: absolute;
       width: 340px;
-      height: 280px;
+      height: 420px;
       top: 50%;
       left: 50%;
       margin-top: -140px;
@@ -84,5 +97,49 @@ input.form-control {
 }
 
 .btn{
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #555;
+  margin-bottom: -20px;
 
+
+}
+
+.log{
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #555;
+  margin-bottom: -20px;
+}
+
+label{
+    font-family: Rajdhani;
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.field{
+
+
+}
+
+.control-label{
+
+}
+
+.remember{
+  display: block;
+  margin-left: 16px;
+  margin-top: -17px;
+  }
+
+.action{
+  
 }
