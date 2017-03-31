@@ -36,7 +36,10 @@ $(document).ready(function() {
       let desc = $('<div>');
       desc.text(thing.volumeInfo.description);
       newDiv.append(desc);
+      let searchButton = $('<button>')
+      searchButton.append(newDiv);
       $('.search-results').append(newDiv);
+
     })
   } //end of loop function
 }) //end of document.ready
