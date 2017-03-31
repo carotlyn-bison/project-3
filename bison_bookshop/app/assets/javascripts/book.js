@@ -43,6 +43,15 @@ $(document).ready(function() {
       }
       newDiv.append(description);
       $('.search-results').append(newDiv);
+<<<<<<< HEAD
+
+    })
+  } //end of loop function
+
+
+
+
+=======
       let save = $('<button>');
       save.text('Add to Bookshelf?').click(function() {
         saveBook(thing.volumeInfo.title, thing.volumeInfo.authors[0], thing.volumeInfo.imageLinks.thumbnail, thing.volumeInfo.description, thing.saleInfo.buyLink, $('.search-results').attr('data-id'));
@@ -72,4 +81,5 @@ $(document).ready(function() {
       }
     }) //end of AJAX book POST method
   } //end of saveBook function
+>>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 }) //end of document.ready
