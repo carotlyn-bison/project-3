@@ -42,12 +42,8 @@ class BooksController < ApplicationController
   def search
     @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+params[:title])
     #setting up an AJAX call in the backend.
-    render json: @response.parsed_response
-    # respond_to do |format|
-    #     format.html {render search}
-    #     format.json #{render json: @resp, content_type: 'text/json'}
-    #     format.js
-    # end
+    render json: {response_data: @response.parsed_response,
+                  user_id: current_user.id}
   end
   private
   def set_book

@@ -8,8 +8,8 @@ $(document).ready(function() {
       data: bookData,
       success: function(data) {
         $('.search-results').empty();
-        console.log(data.items);
-        loop(data.items)
+        $('.search-results').attr('data-id', data.user_id);
+        loop(data.response_data.items);
       },
       error: function(error) {
         console.log('AJAX GET Error: ', error)
@@ -31,12 +31,37 @@ $(document).ready(function() {
       image.attr('src', thing.volumeInfo.imageLinks.thumbnail);
       newDiv.append(image);
       let buyLink = $('<a>');
-      buyLink.attr('href', thing.saleInfo.buyLink);
+      buyLink.attr('href', thing.saleInfo.buyLink).text('Buy This Book');
       newDiv.append(buyLink);
-      let desc = $('<div>');
-      desc.text(thing.volumeInfo.description);
-      newDiv.append(desc);
+      let description = $('<div>');
+      description.text(thing.volumeInfo.description);
+      newDiv.append(description);
       $('.search-results').append(newDiv);
-    })
+      let save = $('<button>');
+      save.text('Add to Bookshelf?').attr('data-id', thing.user_id).click(function() {
+        saveBook(title.text, author.text, image.attr('src'), description.text, buyLink.attr('href'), $('.search-results').attr('data-id'));
+      }) //end of save function
+      newDiv.append(save)
+    }); //end of array.forEach
   } //end of loop function
+  const saveBook = function(title, author, image, description, buyLink, user_id) {
+    $.ajax({
+      type: 'POST',
+      url: '/books',
+      data: {
+        title: title,
+        author: author,
+        image: image,
+        description: description,
+        buy_link: buyLink,
+        user_id: user_id
+      },
+      success: function(data) {
+        window.location.replace('/books/' + data.title);
+      },
+      error: function(error) {
+        console.log('AJAX POST Error: ', error)
+      }
+    })
+  }
 }) //end of document.ready
