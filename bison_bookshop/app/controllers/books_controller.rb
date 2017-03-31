@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js
   def index
     if !user_signed_in?
@@ -25,8 +25,11 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   def create
+    puts book_params
+
     @book = Book.new(book_params)
     if @book.save
+      puts "OK"
       redirect_back fallback_location: :root
     else
       redirect_to :book
@@ -42,16 +45,12 @@ class BooksController < ApplicationController
   def search
     @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+params[:title])
     #setting up an AJAX call in the backend.
-    render json: @response.parsed_response
-    # respond_to do |format|
-    #     format.html {render search}
-    #     format.json #{render json: @resp, content_type: 'text/json'}
-    #     format.js
-    # end
+    render json: {response_data: @response.parsed_response,
+                  user_id: current_user.id}
   end
   private
   def set_book
-    @book = Book.find(params[:title])
+    @book = Book.find(params[:id])
   end
   def book_params
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id)
