@@ -1,0 +1,15 @@
+<%= form_for(review) do |f| %>
+
+  Author: <%= @current_user.name %> <br />
+
+  <%= f.label :content %>
+  <%= f.text_area :content, cols: 40, rows: 10 %><br />
+
+  <%= f.label "Rating:" %>
+  <%= f.integer "/5" %><br>
+
+  <%= f.hidden_field :book_id %>
+  <%= f.hidden_field :book_id, value: @current_user.id %>
+
+  <%= f.submit %>
+<% end %>
