@@ -60,7 +60,7 @@ $(document).ready(function() {
           author: author,
           image: image,
           description: description,
-          buy_link: buyLink,
+          buyLink: buyLink,
           user_id: user_id
         }
       },
