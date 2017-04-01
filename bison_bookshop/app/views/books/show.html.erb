@@ -26,5 +26,8 @@
 <%= review.content %> <br>
 <%= review.created_at %> <br>
 <%= review.out_of_five %> /5
-<button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
+<button><%= link_to 'Edit this Review?', edit_review_path(review) %></button>
+<% if current_user.id == review.user_id %>
+<button><%= link_to 'Delete this Review?', review, method: :delete, data: {confirm: "Are you sure?"} %></button><br>
+<% end %>
 <% end %>

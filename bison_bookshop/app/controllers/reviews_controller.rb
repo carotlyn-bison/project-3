@@ -18,14 +18,14 @@ class ReviewsController < ApplicationController
   end
   def update
     if @review.update(review_params)
-      redirect_to :books
+      redirect_to :book
     else
       flash[:alert] = "Review Edit Error!"
     end
   end
   def destroy
     if @review.destroy
-      redirect_to :books
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Review Destroy Error!"
     end
