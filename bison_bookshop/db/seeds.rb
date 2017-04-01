@@ -17,3 +17,17 @@ Book.create([
   image:'http://books.google.com/books/content?id=3Z8zxKDqKDMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'},
   ])
 puts ("#{Book.count}")
+
+Review.destroy_all
+
+Review.create([
+  {user_id: 1,
+    out_of_five: 5,
+    content: 'one of the greatest books known to man',
+    book_id: 1
+    }])
+
+puts("#{Review.count}")
+
+
+
