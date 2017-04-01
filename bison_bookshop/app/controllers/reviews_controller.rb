@@ -1,48 +1,42 @@
 class ReviewsController < ApplicationController
-    before_action :set_review, only: [:edit, :update, :destroy]
-
-
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action
+  def index
+    @reviews = Review.all
+  end
+  def show
+  end
   def new
-    #allows us to pre-set the post_id for any new comments that we make
-    #preset book id for any new reviews
-     @review = Review.new
-     @review.book_id = Book.show.id
-   end
- @@ -43,4 +43,3 @@ def set_comment
-     @review = Review.find(params[:id])
-   end
- end
-
+    @review = Review.new
+  end
   def create
     @review = Review.new(review_params)
     if @review.save
-      # refresh the page if the  save is sucessfull
-      redirect_to :back
+      redirect_back fallback_location: :books
     else
-
-
+      flash[:alert] = "Review Creation Error!"
     end
   end
-
-   def update
+  def edit
+  end
+  def update
     if @review.update(review_params)
-      redirect_to :book
+      redirect_back fallback_location: :books
     else
-      render :edit
+      flash[:alert] = "Review Edit Error!"
     end
   end
   def destroy
-    if @review.delete
-      #refresh the page on successful delete
-      redirect_to :back
-    end
+    if @review.destroy
+      redirect_to :books
+    else
+      flash[:alert] = "Review Destroy Error!"
   end
   private
-  def review_params
-    params.require(:review).permit(:review, :book_id)
+  def set_review
+    @review = Review.params[:id]
   end
-  def set_comment
-    @review = Review.find(params[:id])
+  def review_params
+    params.require(:review).permit(:users_id, :out_of_five, :content, :books_id)
   end
 end
-
