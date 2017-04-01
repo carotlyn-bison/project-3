@@ -1,48 +1,63 @@
 class ReviewsController < ApplicationController
-    before_action :set_review, only: [:edit, :update, :destroy]
 
+  before_action :set_review, only: [:show, :edit, :update]
+
+  def index
+    @book_id = params[:id]
+    @book= Book.find(@book_id)
+    # @post_comments = Comment.where(post_id: @post_id)
+    @book_reviews = @book.reviews
+  end
 
   def new
-    #allows us to pre-set the post_id for any new comments that we make
-    #preset book id for any new reviews
-     @review = Review.new
-     @review.book_id = Book.show.id
-   end
- @@ -43,4 +43,3 @@ def set_comment
-     @review = Review.find(params[:id])
-   end
- end
+    @book_id = params[:id]
+    @review = Review.new
+  end
 
   def create
-    @review = Review.new(review_params)
+    @review = Review.new(comment_params)
     if @review.save
-      # refresh the page if the  save is sucessfull
-      redirect_to :back
+      redirect_to reviews_path(@review.book)
     else
-
-
+      render :new
     end
   end
 
-   def update
+  def show
+    # @comment = Comment.find(params[:comment_id])
+  end
+
+  def edit
+    # @comment = Comment.find(params[:comment_id])
+    # @post_id = params[:id]
+  end
+
+  def update
+    # @comment = Comment.find(params[:comment_id])
     if @review.update(review_params)
-      redirect_to :book
+      redirect_to reviews_path @review.book
     else
       render :edit
     end
   end
+
   def destroy
-    if @review.delete
-      #refresh the page on successful delete
-      redirect_to :back
+    @review = Review.find(params[:comment_id])
+    if @review.destroy
+      redirect_to reviews_path @review.book
+    else
+      render :index
     end
   end
-  private
-  def review_params
-    params.require(:review).permit(:review, :book_id)
-  end
-  def set_comment
-    @review = Review.find(params[:id])
-  end
-end
 
+  private
+
+  def review_params
+    params.require(:review).permit(:description, :review_id)
+  end
+
+  def set_review
+    @review = Review.find(params[:review_id])
+  end
+
+end
