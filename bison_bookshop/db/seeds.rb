@@ -18,5 +18,16 @@ Book.create([
   ])
 puts ("#{Book.count}")
 
+Review.destroy_all
+
+Review.create([
+  {user_id: 1,
+    out_of_five: 5,
+    content: 'one of the greatest books known to man',
+    book_id: 1
+    }])
+
+puts("#{Review.count}")
+
 
 

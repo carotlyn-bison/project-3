@@ -40,3 +40,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:users_id, :out_of_five, :content, :books_id)
   end
 end
+end

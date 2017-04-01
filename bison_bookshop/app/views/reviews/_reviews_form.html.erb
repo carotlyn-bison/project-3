@@ -1,6 +1,6 @@
 <%= form_for(review) do |f| %>
 
-  Author: <%= @current_user.name %> <br />
+  Author: <%= current_user.name %> <br />
 
   <%= f.label :content %>
   <%= f.text_area :content, cols: 40, rows: 10 %><br />
