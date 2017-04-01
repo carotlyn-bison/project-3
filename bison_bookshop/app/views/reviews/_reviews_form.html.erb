@@ -9,7 +9,7 @@
   <%= f.integer "/5" %><br>
 
   <%= f.hidden_field :book_id %>
-  <%= f.hidden_field :book_id, value: @current_user.id %>
+  <%= f.hidden_field :users_id, value: @current_user.id %>
 
   <%= f.submit %>
 <% end %>

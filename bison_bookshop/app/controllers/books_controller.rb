@@ -1,17 +1,18 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
   respond_to :html, :js
   def index
     if !user_signed_in?
       redirect_to new_user_session_path
     else
     @books = Book.all
-    @user = current_user.id
+    @user = current_user
     end
   end
   def show
-    @review = Review.new
-    @review.book_id=@book.id
+    # @review = Review.new
+    # @review.book_id=@book.id
   end
   def edit
   end
@@ -19,28 +20,26 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_back fallback_location: :root
     else
-      redirect_to :book
+      flash[:alert] = "Book Update Error!"
     end
   end
   def new
     @book = Book.new
   end
   def create
-    puts book_params
-
     @book = Book.new(book_params)
     if @book.save
       puts "OK"
-      redirect_back fallback_location: :root
+      redirect_to :root
     else
-      redirect_to :book
+      flash[:alert] = "Book Creation Error!"
     end
   end
   def destroy
     if @book.destroy
       redirect_to :root
     else
-      redirect_back fallback_location: :book
+      flash[:alert] = "Book Destroy Error!"
     end
   end
   def search
