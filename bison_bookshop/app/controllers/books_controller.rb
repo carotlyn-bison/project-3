@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def show
     # @review = Review.new
     # @review.book_id=@book.id
+    # @review.user_id = current_user.id
   end
   def edit
   end
