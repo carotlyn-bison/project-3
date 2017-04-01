@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
 
   get "reviews/index", to: "reviews#index" #, as: :reviews
-  get "reviews/show", to: "reviews#show", as: :review
   get "reviews/edit", to: "reviews#edit", as: :edit_review
   get "reviews/new", to: "reviews#new", as: :new_review
+  post "/reviews", to: "reviews#create" #no helper bc we're posting
 
   delete "/books", to:"books#destroy", as: :delete_book
 
