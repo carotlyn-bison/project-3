@@ -6,11 +6,8 @@
       <h1>Bookself:</h1>
       <% @books.each do |book| %>
         <div>
-          <h1><%= book.title %></h1>
-          <p>By: <%= book.author %></p>
+          <h1><%= link_to book.title, book_path(book.id) %></h1>
           <div><img src="<%= book.image %>" /></div>
-          <p><%= book.description %></p>
-          <p><%= link_to book.buy_link %></p>
         </div>
       <% end %>
   <% end %>
