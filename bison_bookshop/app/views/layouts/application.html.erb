@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BisonBookshelf</title>
+    <title>Bison Bookshelf</title>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div>
-    <header>
+<body>
+<nav>
+  <header class="title">Bison Bookshelf </header>
+  <div class="button-div">
+    <div class="button-nav">
+      <button><%= link_to "Home", books_path %></button>
     </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
+    <div class="button-nav">
+      <% if user_signed_in? %>
+        <button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+        </div>
+        <div class="button-nav">
+          <button><%= link_to "Your Bookself", user_path(@user) %></button>
+        <% else %>
+        <button><%= link_to('Login', new_user_session_path)  %></button>
+      <% end %>
+    </div>
+  </div>
+</nav>
 
     <%= yield %>
   </body>

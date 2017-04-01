@@ -1,5 +1,5 @@
-<%= form_tag search_books_path, class: "bitches", remote: true do  %>
+<%= form_tag search_books_path, method: "get", class: "search-form-book", remote: true do  %>
   <%= label_tag :title %>
-  <%= text_field_tag :title %>
-  <%= submit_tag %>
+  <%= text_field_tag :title, "", class: "title-input", placeholder: "Enter a title"  %>
+  <%= button_tag "submit", class: "book-search-submit" %>
 <% end %>
