@@ -1,14 +1,17 @@
-<div>
-  <h1>Hi, <%= @user.email %>!</h1>
-</div>
-<div>
+
+
+<div class = "bookshelf">
+         <div>
+          <h1>Hi, <%= @user.email %>!</h1>
+        </div>
+<div class ="shelf">
   <% if current_user == @user %>
+  <div class = "bookshelf">
       <h1>Bookself:</h1>
       <% @books.each do |book| %>
-        <div>
-          <h1><%= link_to book.title, book_path(book.id) %></h1>
-          <div><img src="<%= book.image %>" /></div>
-        </div>
+    <div>
+       <%= link_to (image_tag(book.image)), book_path(book.id) %>
+    </div>
       <% end %>
   <% end %>
 </div>
