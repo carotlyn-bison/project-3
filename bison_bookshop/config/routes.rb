@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get "books/:id", to: "books#show", as: :book
   get "books/:id/edit", to: "books#edit", as: :edit_book
   post "/books", to: "books#create" #no helper bc we're posting
-
+  patch "/books/:id", to: "books#update" #no helper bc we're patching
+  delete "/books/:id", to: "books#destroy" #no helper bc we're deleting
 
   get "reviews/index", to: "reviews#index" #, as: :reviews
   get "reviews/edit", to: "reviews#edit", as: :edit_review
@@ -22,6 +23,6 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show", as: :user # user_path
 
-   delete "/books/:id", to: "books#destroy"
+
 
 end

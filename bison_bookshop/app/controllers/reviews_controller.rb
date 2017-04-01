@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
-  before_action
   def index
     @reviews = Review.all
   end
@@ -11,6 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.save
       redirect_back fallback_location: :books
+      puts "OK"
     else
       flash[:alert] = "Review Creation Error!"
     end
@@ -29,6 +29,7 @@ class ReviewsController < ApplicationController
       redirect_to :books
     else
       flash[:alert] = "Review Destroy Error!"
+    end
   end
 end
   private
@@ -36,6 +37,6 @@ end
     @review = Review.params[:id]
   end
   def review_params
-    params.require(:review).permit(:users_id, :out_of_five, :content, :books_id)
+    params.require(:review).permit(:user_id, :out_of_five, :content, :book_id)
   end
 end
