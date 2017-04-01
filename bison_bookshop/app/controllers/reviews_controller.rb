@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
      @review = Review.new
      @review.book_id = Book.show.id
    end
- @@ -43,4 +43,3 @@ def set_comment
+ def set_comment
      @review = Review.find(params[:id])
    end
  end
@@ -45,4 +45,3 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 end
-
