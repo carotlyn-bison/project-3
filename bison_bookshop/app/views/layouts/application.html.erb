@@ -12,13 +12,13 @@
 
 <body>
 <nav>
-  <header class="title">Bison Bookshelf</header>
+  <header class="title">Bison Bookshelf </header>
   <div class="button-div">
     <div class="button-nav">
       <button><%= link_to "Home", books_path %></button>
     </div>
     <div class="button-nav">
-      <button><%= link_to "Your Bookself" %></button>
+      <button><%= link_to "Your Bookself", user_path(@user) %></button>
     </div>
     <div class="button-nav">
       <% if user_signed_in? %>
