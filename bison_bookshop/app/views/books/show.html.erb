@@ -23,7 +23,8 @@
   <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: {confirm: "Are you sure?"} %></button>
 </div>
 <% @book.reviews.each do |review| %>
-<%= review.content %>
-<%= review.created_at %>
-<button><%= link_to 'Edit this Review?', edit_review_path %></button>
+<%= review.content %> <br>
+<%= review.created_at %> <br>
+<%= review.out_of_five %> /5
+<button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
 <% end %>
