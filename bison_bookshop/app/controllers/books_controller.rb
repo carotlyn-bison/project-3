@@ -6,6 +6,7 @@ class BooksController < ApplicationController
       redirect_to new_user_session_path
     else
     @books = Book.all
+    @user = current_user.id
     end
   end
   def show
@@ -46,7 +47,7 @@ class BooksController < ApplicationController
     @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+params[:title])
     #setting up an AJAX call in the backend.
     render json: {response_data: @response.parsed_response,
-                  user_id: current_user.id}
+                  user_id: @user}
   end
   private
   def set_book
