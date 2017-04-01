@@ -29,10 +29,11 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   def create
+    @user = current_user
     @book = Book.new(book_params)
     if @book.save
       puts "OK"
-      redirect_to :root
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Book Creation Error!"
     end
