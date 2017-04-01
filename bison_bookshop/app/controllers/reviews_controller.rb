@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
   end
   def destroy
     if @review.destroy
-      redirect_to :books
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Review Destroy Error!"
     end
