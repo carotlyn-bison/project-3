@@ -1,12 +1,12 @@
 
 
 <div class = "bookshelf">
-         <div>
+         <div class ="welcome">
           <h1>Hi, <%= @user.email %>!</h1>
         </div>
 <div class ="shelf">
   <% if current_user == @user %>
-  <div class = "bookshelf">
+  <div class = "show-books">
       <h1>Bookself:</h1>
       <% @books.each do |book| %>
     <div>
