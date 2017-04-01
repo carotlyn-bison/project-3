@@ -1,7 +1,12 @@
 class ReviewsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_review, only: [:edit, :update, :destroy]
   def index
     @review = Review.all
+=======
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  def show
+>>>>>>> 1babb26bd744c47f2b447cd519ed0c12f3c6fc9d
   end
   def show
   end
@@ -22,7 +27,7 @@ class ReviewsController < ApplicationController
   end
   def update
     if @review.update(review_params)
-      redirect_back fallback_location: :books
+      redirect_to :books
     else
       flash[:alert] = "Review Edit Error!"
     end

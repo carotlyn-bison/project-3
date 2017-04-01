@@ -1,30 +1,49 @@
+<div id="bookShowContainer">
+<div class="music-div">
+    <button class="mute">&#128263;</button>
+    <button class="sound-on">&#128266;</button>
+</div>
 <div class="single-book">
+  <div class="title-author">
     <h1><%= @book.title %></h1>
     <p>By: <%= @book.author %></p>
-    <div><img src="<%= @book.image %>" /></div>
+    </div>
+    <div class="image-single"><img src="<%= @book.image %>" /></div>
+    <div class="description-buy">
     <p><% if @book.description? %>
         <%= @book.description %>
           <% else %>
           No description avaliable.
           <% end %>
         </p>
-    <p><% if @book.buy_link? %>
+      <p class="buy-link-show"><% if @book.buy_link? %>
         <button><%= link_to "buy this book?", @book.buy_link %></button>
         <% else %>
         Sorry, this book is not available for purchase.
         <% end %></p>
-
+        <div class="book-delete">
+          <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+        </div>
+    </div>
 </div>
 
 <div>
   <%= render "reviews/form", review: @review %>
 </div>
-<div class="button">
-  <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+  <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: {confirm: "Are you sure?"} %></button>
 </div>
 <% @book.reviews.each do |review| %>
+<<<<<<< HEAD
 <%= review.content %>
 <%= review.created_at %>
   <button><%= link_to 'delete this review?', delete_review_path(review), method: :delete, data: { confirm: "Are you sure?"} %></button>
 
+=======
+<%= review.content %> <br>
+<%= review.created_at %> <br>
+<%= review.out_of_five %> /5
+<button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
+>>>>>>> 1babb26bd744c47f2b447cd519ed0c12f3c6fc9d
 <% end %>
+
+</div>
