@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "reviews/edit", to: "reviews#edit", as: :edit_review
   get "reviews/new", to: "reviews#new", as: :new_review
 
+  delete "/books", to:"books#destroy", as: :delete_book
+
   get "/users/:id", to: "users#show", as: :user # user_path
 
 end
