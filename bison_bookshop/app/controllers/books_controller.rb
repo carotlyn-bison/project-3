@@ -11,6 +11,7 @@ class BooksController < ApplicationController
     end
   end
   def show
+    @user = current_user
     # @review = Review.new
     # @review.book_id=@book.id
     # @review.user_id = current_user.id
@@ -56,4 +57,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id)
   end
+
 end
