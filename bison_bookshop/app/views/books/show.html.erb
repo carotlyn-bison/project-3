@@ -27,16 +27,16 @@
     </div>
 </div>
 
-<div>
+<div class="review-form">
   <%= render "reviews/form", review: @review %>
 </div>
-  <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: {confirm: "Are you sure?"} %></button>
-</div>
+<div>
 <% @book.reviews.each do |review| %>
 <%= review.content %> <br>
 <%= review.created_at %> <br>
 <%= review.out_of_five %> /5
 <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
 <% end %>
-
 </div>
+</div>
+
