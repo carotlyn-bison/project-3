@@ -30,6 +30,7 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = "Review Destroy Error!"
   end
+end
   private
   def set_review
     @review = Review.params[:id]
@@ -37,5 +38,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:users_id, :out_of_five, :content, :books_id)
   end
-end
 end
