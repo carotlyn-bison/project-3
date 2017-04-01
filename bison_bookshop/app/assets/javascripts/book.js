@@ -10,6 +10,7 @@ $(document).ready(function() {
         $('.search-results').empty();
         $('.search-results').attr('data-id', data.user_id);
         loop(data.response_data.items);
+        $('.search-container').css('background-color', 'rgba(0,0,0, 0.5)');
       },
       error: function(error) {
         console.log('AJAX GET Error: ', error)
@@ -23,7 +24,7 @@ $(document).ready(function() {
       title.text(thing.volumeInfo.title);
       newDiv.append(title);
       let author = $('<div>').addClass('author-div');
-      author.text(thing.volumeInfo.authors[0]);
+      author.text('By: ' + thing.volumeInfo.authors[0]);
       newDiv.append(author)
       let image = $('<div>').addClass('image-div');
       image.html($("<img>").attr('src', thing.volumeInfo.imageLinks.thumbnail));
