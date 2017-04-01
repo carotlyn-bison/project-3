@@ -14,3 +14,8 @@
         Sorry, this book is not available for purchase.
         <% end %></p>
 </div>
+<% @book.reviews.each do |review| %>
+<%= review.content %>
+<%= review.created_at %>
+<% end %>
+<%= render "reviews/reviews_form", review: @review %>
