@@ -70,6 +70,18 @@ background-color: rgba(95, 158, 160, 0.31);
 
 /* Book Index Page*/
 
+.title-input{
+
+    background-color: white;
+    padding: 1%;
+    margin: 1%;
+
+}
+button.search-form-book{
+  color: white;
+
+}
+
 #bookIndex {
   margin: 20px;
 }
