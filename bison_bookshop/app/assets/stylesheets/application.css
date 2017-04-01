@@ -13,52 +13,19 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Limelight|Lobster|Questrial|Rajdhani');
+h1,
+h2,
+h3,
+p,
+{
+  font-family: Lobster;
 
-body {
-    background: #313745;
-    background-attachment: fixed;
-    background-size: cover;
-    color: white;
-    font-family: 'Libre Baskerville', serif;
-    margin: 0;
-    padding: 0;
-}
 
-nav {
-  align-items: center;
-  background-color: #474e60;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-button {
-  background-color: grey;
-  border-radius: 10px;
-  box-shadow: 2px 2px #313745;
-}
-
-button:hover{
-  background-color: #313745;
-  box-shadow: 2px 2px grey;
-}
-
-button a{
-  color: white;
-  text-decoration: none;
 }
 
 
 .header{
-<<<<<<< HEAD
-    background-color: rgba(95, 158, 160, 0.31);
-    display: flex;
-    flex-direction: column;
-    height: 90px;
-    width: 100%;
-
-=======
 display: flex;
 flex-direction: column;
 width: 100%;
@@ -66,78 +33,12 @@ height: 90px;
 background-color: rgba(95, 158, 160, 0.31);
 }
 
-.button-div {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(230, 214, 175, 0.34);
 }
 
-.button-nav {
-  margin: 0 5px 0 5px;
->>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
-}
-
-/* Book Index Page*/
-
-#bookIndex {
-  margin: 20px;
-}
-
-.search-container {
-  background-color: rgba(0,0,0, 0.5);
-  position: relative;
-  width: 90%;
-  height: 400px;
-  margin: 5px auto;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-.search-results {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  height: 350px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-  .search-result {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 350px;
-    padding: 5px 20px 5px 20px;
-  }
-
-  .search-result img{
-    max-width: 100px;
-  }
-
-/* Video Styling for Book Index Page*/
-#video-container {
-  background-image: url(intro-stop.jpg);
-  left: 0%;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0%;
-  width: 100vw;
-  z-index: -100;
-}
-
-video {
-  position: absolute;
-  margin-top: -10px;
-  width: 102vw;
-  z-index: -100;
-}
-
-
-
-
-
-/*devise form styling*/
 .login {
     font-family: Limelight;
     height: 10%;
@@ -146,11 +47,7 @@ video {
     background-color: yellow;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
+/*devise form styling*/
 input.form-control {
   color: #777;
       padding-left: 10px;
@@ -166,15 +63,6 @@ input.form-control {
 
 }
 
-<<<<<<< HEAD
-=======
-.form-control {
-  background-color: white;
-  padding: 3%;
-  margin: 3%;
-}
->>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
-
 p.alert{
   color: red;
   font-family: Rajdhani;
@@ -183,6 +71,7 @@ p.alert{
   font-size: 14px;
   letter-spacing: 0.1em;
 }
+
 
 
 .login-container {
@@ -197,6 +86,7 @@ p.alert{
       border-radius: 3px;
       border: 1px solid #ccc;
       box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+
     animation-name: bounceIn;
     animation-fill-mode: both;
     animation-duration: 1s;
@@ -207,26 +97,7 @@ p.alert{
 .form-container {
     margin: 0 auto;
     margin-top: 20px;
-     background-color: : linear-gradient(left, rgba(233,223,196,1) 0%,
-    rgba(233,223,196,1) 1%,
-    rgba(237,227,200,1) 2%,
-       rgba(237,227,200,1) 24%,
-       rgba(235,221,195,1) 25%,
-       rgba(233,223,196,1) 48%,
-       rgba(235,221,195,1) 49%,
-       rgba(230,216,189,1) 52%,
-       rgba(230,216,189,1) 53%,
-       rgba(233,219,192,1) 54%,
-       rgba(230,216,189,1) 55%,
-       rgba(230,216,189,1) 56%,
-       rgba(233,219,192,1) 57%,
-       rgba(230,216,189,1) 58%,
-       rgba(230,216,189,1) 73%,
-       rgba(233,219,192,1) 74%,
-       rgba(233,219,192,1) 98%,
-       rgba(235,221,195,1) 100%)
 }
-
 
 .btn{
   font-family: Rajdhani;
@@ -274,194 +145,4 @@ label{
 
 .action{
 
-<<<<<<< HEAD
-}
-
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-
-
-/*links hover*/
-
-
-a {
-  text-decoration: none;
-  color: #1ab188;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-a:hover {
-  color: #179b77;
-}
-
-.form {
-  background: rgba(19, 35, 47, 0.9);
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px
-  rgba(19, 35, 47, 0.3);
-}
-
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-.tab-group li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #1ab188;
-  color: black;
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
-h1 {
-  text-align: center;
-  color: black;
-  font-weight: 300;
-  margin: 0 0 40px;
-}
-
-label {
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: black;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 20px;
-}
-label .req {
-  margin: 2px;
-  color: #1ab188;
-}
-
-label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-label.active .req {
-  opacity: 0;
-}
-
-label.highlight {
-  color: black;
-}
-
-input, textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: black;
-  border-radius: 0;
-  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-input:focus, textarea:focus {
-  outline: 0;
-  border-color: #1ab188;
-}
-
-input[type=submit]{
-
-
-}
-
-input.btn{
-    margin-top: 45px;
-    margin-left: -8px;
-}
-
-textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
-}
-
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
-}
-.top-row > div:last-child {
-  margin: 0;
-}
-
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1ab188;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #179b77;
-}
-
-.button-block {
-  display: block;
-  width: 100%;
-}
-
-.forgot {
-  margin-top: -20px;
-  text-align: right;
-=======
->>>>>>> 3865d03d2bfb34d0d74cd97abe1e1cf9bfdb10e9
 }
