@@ -19,3 +19,6 @@
 <div>
   <%= render 'reviews/reviews_form', review: @review %>
 </div>
+<div class="button">
+  <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+</div>
