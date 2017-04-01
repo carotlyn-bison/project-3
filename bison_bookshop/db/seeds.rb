@@ -17,3 +17,6 @@ Book.create([
   image:'http://books.google.com/books/content?id=3Z8zxKDqKDMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'},
   ])
 puts ("#{Book.count}")
+
+
+
