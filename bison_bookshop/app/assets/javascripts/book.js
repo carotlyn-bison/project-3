@@ -28,18 +28,18 @@ $(document).ready(function() {
       let image = $('<img>');
       image.attr('src', thing.volumeInfo.imageLinks.thumbnail);
       newDiv.append(image);
-      let buyLink = $('<a>');
+      let buyLink = $('<div>');
       if (thing.saleInfo.buyLink) {
-        buyLink.attr('href', thing.saleInfo.buyLink).text('Buy This Book');
+        buyLink.html($("<a></a>").attr('href', thing.saleInfo.buyLink).text('Buy This Book'));
       } else {
-        buyLink.text('Sorry, this book is not available for purchase');
+        buyLink.css('font-style', 'italic').text('Sorry, this book is not available for purchase.');
       }
       newDiv.append(buyLink);
       let description = $('<div>').addClass('description');
       if (thing.volumeInfo.description) {
         description.text(thing.volumeInfo.description);
       } else {
-        description.text('None')
+        description.css('font-style', 'italic').text('No description avaliable.');
       }
       newDiv.append(description);
       $('.search-results').append(newDiv);
@@ -51,6 +51,7 @@ $(document).ready(function() {
     }); //end of array.forEach
   } //end of loop function
   const saveBook = function(title, author, image, description, buyLink, user_id) {
+    console.log(buyLink);
     $.ajax({
       type: 'POST',
       url: '/books',
