@@ -14,3 +14,6 @@
         Sorry, this book is not available for purchase.
         <% end %></p>
 </div>
+<div class="button">
+  <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+</div>
