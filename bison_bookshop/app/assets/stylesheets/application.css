@@ -127,7 +127,7 @@ background-color: rgba(95, 158, 160, 0.31);
   position: absolute;
   display: flex;
   flex-direction: row;
-  height: 350px;
+  height: 400px;
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -163,7 +163,7 @@ background-color: rgba(95, 158, 160, 0.31);
 
 .description-div {
   font-size: 12px;
-  padding: 0 0 10px 0;
+  padding: 0 0 5px 0;
 }
 
 /* Video Styling for Book Index Page*/
