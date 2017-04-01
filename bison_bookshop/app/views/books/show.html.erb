@@ -25,4 +25,6 @@
 <% @book.reviews.each do |review| %>
 <%= review.content %>
 <%= review.created_at %>
+  <button><%= link_to 'delete this review?', delete_review_path(review), method: :delete, data: { confirm: "Are you sure?"} %></button>
+
 <% end %>

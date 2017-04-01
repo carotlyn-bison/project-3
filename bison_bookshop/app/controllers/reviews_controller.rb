@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   def index
-    @reviews = Review.all
+    @review = Review.all
   end
+  def show
+  end
+
   def new
     @review = Review.new
   end
@@ -25,18 +28,19 @@ class ReviewsController < ApplicationController
     end
   end
   def destroy
-    if @review.destroy
+    if @review.destroy(review_params)
       redirect_to :books
     else
       flash[:alert] = "Review Destroy Error!"
     end
   end
-end
+
   private
   def set_review
-    @review = Review.params[:id]
+    @review = Review.find(params[:id])
   end
   def review_params
+
     params.require(:review).permit(:user_id, :out_of_five, :content, :book_id)
   end
 end

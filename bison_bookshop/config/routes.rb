@@ -14,12 +14,14 @@ Rails.application.routes.draw do
   patch "/books/:id", to: "books#update" #no helper bc we're patching
   delete "/books/:id", to: "books#destroy" #no helper bc we're deleting
 
+
   get "reviews/index", to: "reviews#index" #, as: :reviews
   get "reviews/edit", to: "reviews#edit", as: :edit_review
   get "reviews/new", to: "reviews#new", as: :new_review
-  post "/reviews", to: "reviews#create" #no helper bc we're posting
+  post "reviews", to: "reviews#create" #no helper bc we're posting
 
-  delete "/books", to:"books#destroy", as: :delete_book
+
+  delete "reviews/:id", to: "reviews#destroy", as: :delete_review
 
   get "/users/:id", to: "users#show", as: :user # user_path
 
