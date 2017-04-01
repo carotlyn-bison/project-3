@@ -37,15 +37,18 @@ button {
   background-color: grey;
   border-radius: 10px;
   box-shadow: 2px 2px #313745;
+  font-family: 'Libre Baskerville', serif;
 }
 
 button:hover{
   background-color: #313745;
   box-shadow: 2px 2px grey;
+  font-family: 'Libre Baskerville', serif;
 }
 
 button a{
   color: white;
+  font-family: 'Libre Baskerville', serif;
   text-decoration: none;
 }
 
@@ -68,16 +71,41 @@ background-color: rgba(95, 158, 160, 0.31);
   margin: 0 5px 0 5px;
 }
 
+.music-div {
+  display: flex;
+  justify-content: flex-end;
+  z-index: -50;
+}
+
+.music-div button {
+  margin: 3px;
+}
+
 /* Book Index Page*/
 
 .title-input{
-
     background-color: white;
     padding: 1%;
     margin: 1%;
-
 }
-button.search-form-book{
+
+.music-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.music-div-search button {
+  margin: 3px;
+}
+
+.search-form-book {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+
+.search-form-book button{
   color: white;
 
 }
@@ -87,7 +115,6 @@ button.search-form-book{
 }
 
 .search-container {
-  background-color: rgba(0,0,0, 0.5);
   position: relative;
   width: 90%;
   height: 400px;
@@ -100,7 +127,7 @@ button.search-form-book{
   position: absolute;
   display: flex;
   flex-direction: row;
-  height: 350px;
+  height: 400px;
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -114,8 +141,30 @@ button.search-form-book{
   }
 
   .search-result img{
-    max-width: 100px;
+    box-shadow: 2px 2px rgba(250,250,250,0.5);
+    margin: 10px 0 0 0;
+    max-height: 160px;
   }
+
+.buy-link-div {
+  visibility: hidden;
+}
+
+.title-div {
+  font-size: 18px;
+  text-decoration: underline;
+  text-shadow: 1px 1px grey;
+}
+
+.author-div {
+  font-size: 12px;
+  padding: 5px 0 0 0;
+}
+
+.description-div {
+  font-size: 12px;
+  padding: 0 0 5px 0;
+}
 
 /* Video Styling for Book Index Page*/
 #video-container {
@@ -249,7 +298,6 @@ label{
 }
 
 
-
 /*Creating that bookshelf*/
 .bookshelf{
   background-color: rgb(61, 57, 52);
@@ -268,5 +316,45 @@ label{
   height: 350px;
   overflow-x: scroll;
   overflow-y: hidden;
+
+/*Book Show Page*/
+
+#bookShowContainer {
+  margin: 20px;
+}
+
+.single-book {
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 2px 2px rgba(150,150,150,0.7);
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.buy-link-show {
+  font-style: italic;
+  font-size: 10px;
+}
+
+.title-author {
+  width: 40%;
+}
+
+.image-single {
+  width: 20%;
+}
+
+.image-single img {
+  box-shadow: 2px 2px rgba(250,250,250,0.5);
+  height: 250px;
+}
+
+.description-buy {
+  width: 40%;
+}
+
+.book-delete {
+  margin: 20px 0 0 0;
 
 }

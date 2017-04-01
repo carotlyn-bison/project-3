@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:edit, :update, :destroy]
-  def index
-    @reviews = Review.all
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  def show
   end
   def new
     @review = Review.new
@@ -19,7 +18,7 @@ class ReviewsController < ApplicationController
   end
   def update
     if @review.update(review_params)
-      redirect_back fallback_location: :books
+      redirect_to :books
     else
       flash[:alert] = "Review Edit Error!"
     end
@@ -33,7 +32,7 @@ class ReviewsController < ApplicationController
   end
   private
   def set_review
-    @review = Review.params[:id]
+    @review = Review.find(params[:id])
   end
   def review_params
     params.require(:review).permit(:user_id, :out_of_five, :content, :book_id)

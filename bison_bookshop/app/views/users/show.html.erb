@@ -1,10 +1,13 @@
-
-
+  <div class="music-div">
+    <button class="mute">&#128263;</button>
+    <button class="sound-on">&#128266;</button>
+  </div>
 <div class = "bookshelf">
          <div class ="welcome">
           <h1>Hi, <%= @user.email %>!</h1>
         </div>
 <div class ="shelf">
+<div>
   <% if current_user == @user %>
   <div class = "show-books">
       <h1>Bookself:</h1>
