@@ -297,6 +297,26 @@ label{
 
 }
 
+
+/*Creating that bookshelf*/
+.bookshelf{
+  background-color: rgb(61, 57, 52);
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin: 5px auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.shelf{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
 /*Book Show Page*/
 
 #bookShowContainer {
@@ -336,4 +356,5 @@ label{
 
 .book-delete {
   margin: 20px 0 0 0;
+
 }
