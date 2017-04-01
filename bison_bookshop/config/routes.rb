@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show", as: :user # user_path
 
+   delete "/books/:id", to: "books#destroy"
+
 end
