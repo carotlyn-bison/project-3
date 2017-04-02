@@ -15,7 +15,7 @@
  */
 
 body {
-    background: #313745;
+    background: #f7f7f2;
     background-attachment: fixed;
     background-size: cover;
     color: white;
@@ -26,23 +26,29 @@ body {
 
 nav {
   align-items: center;
-  background-color: #474e60;
+  background-color: #19265b;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
 }
 
+a{
+  color: #19265b;
+  text-decoration: none;
+
+}
+
 button {
-  background-color: grey;
+  background-color: #19265b;
   border-radius: 10px;
-  box-shadow: 2px 2px #313745;
+  box-shadow: 2px 2px #f7f7f7;
   font-family: 'Libre Baskerville', serif;
 }
 
 button:hover{
   background-color: #313745;
-  box-shadow: 2px 2px grey;
+  box-shadow: 2px 2px #f7f7f7;
   font-family: 'Libre Baskerville', serif;
 }
 
@@ -54,7 +60,7 @@ button a{
 
 .review-button {
   background-color: grey;
-  border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 2px 2px #313745;
   color: white;
   font-family: 'Libre Baskerville', serif;
@@ -208,18 +214,16 @@ video {
 }
 
 input.form-control {
-  color: #777;
-      padding-left: 10px;
-      margin: 10px;
-      margin-top: 12px;
-      margin-left: 18px;
-      width: 290px;
-      height: 35px;
-      border: 1px solid #c7d0d2;
-      border-radius: 2px;
-      box-shadow: inset 0 1.5px 3px
-      rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
-
+    color: #777;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 8%;
+    margin-left: 4%;
+    width: 78%;
+    height: 29%;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
 }
 
 .form-control {
@@ -237,8 +241,18 @@ p.alert{
   letter-spacing: 0.1em;
 }
 
+#error_explanation{
 
-.login-container {
+  color: red;
+  font-family: Rajdhani;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+
+/*.login-container {
       position: absolute;
       width: 340px;
       height: 420px;
@@ -255,12 +269,80 @@ p.alert{
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
+}*/
+
+.login-container {
+  position: absolute;
+  width: 340px;
+  height: 420px;
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -170px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+  animation-name: stretch;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: once;
+  animation-fill-mode: none;
+  /*animation-play-state: running;*/
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.01);
+    background-color: #fff;
+    border-radius: 12%;
+  }
+  50% {
+    background-color: #fff;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #fff;
+  }
+}
+
+
+
+
+.signup-container{
+  position: absolute;
+  width: 340px;
+  height: 420px;
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -170px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+animation-name: bounceIn;
+animation-fill-mode: both;
+animation-duration: 1s;
+animation-iteration-count: 1;
+animation-timing-function: linear;
+
 }
 
 .form-container {
     margin: 0 auto;
     margin-top: 20px;
 }
+
+.signup-form-container{
+  margin: 0 auto;
+  margin-top: 20px;
+
+}
+
 
 .btn{
   font-family: Rajdhani;
@@ -312,23 +394,109 @@ label{
 
 
 /*Creating that bookshelf*/
+
+/*usershow*/
+
 .bookshelf{
-  background-color: rgb(61, 57, 52);
+
+  background-image: url("border.jpeg");
+  position: relative;
+  border: 8px solid black;
+}
+
+h1.user {
+  font-size: 18px;
+  color: #eddec9;
+  text-shadow: 0px 1px 0px rgb(214, 206, 194);
+text-align: center;
+
+}
+
+
+
+.shelf{
+  background-image: url("wood.jpeg");
   position: relative;
   width: 90%;
   height: 400px;
   margin: 5px auto;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 8px solid black;
+}
+/*
+.show-books{
+  display: flex;
+  flex-direction: column;
+
 }
 
-.shelf{
+.have-read{
+
+justify-content: space-between;
+
+
+}
+
+.to-read{
+  display: flex;
+
+}*/
+
+@import "compass/css3";
+
+.show-books {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.have-read {
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+.to-read {
+  background: blue;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+/*.book{
   position: absolute;
   display: flex;
   flex-direction: row;
-  height: 350px;
+  height: 400px;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: hidden;*/
+
+
 }
 
 /*Book Show Page*/
