@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402163710) do
+ActiveRecord::Schema.define(version: 20170402164534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20170402163710) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
-    t.integer  "books_id"
+    t.integer  "book_id"
     t.string   "book_title"
-    t.index ["books_id"], name: "index_reviews_on_books_id", using: :btree
+    t.index ["book_id"], name: "index_reviews_on_book_id", using: :btree
     t.index ["cached_votes_down"], name: "index_reviews_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_reviews_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_reviews_on_cached_votes_total", using: :btree
@@ -86,5 +86,4 @@ ActiveRecord::Schema.define(version: 20170402163710) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
-  add_foreign_key "reviews", "books", column: "books_id"
 end
