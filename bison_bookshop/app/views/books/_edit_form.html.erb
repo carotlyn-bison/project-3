@@ -1,6 +1,7 @@
 <%= form_for(book) do |f| %>
   <div class="book-form">
     <div class="read">
+<<<<<<< HEAD
       <%= f.label :read %><br>
       <table class "doodoo">
       <tr>
@@ -10,6 +11,17 @@
       <tr>
       <td><%= f.label  'Not read' %></td>
       <td><%= f.radio_button :read, false%></td>
+=======
+      <%= f.label :have_read %><br>
+      <table class "doodoo">
+      <tr>
+      <td><%= f.label 'read' %></td>
+      <td><%= f.radio_button :have_read, :checked => true%></td>
+      </tr>
+      <tr>
+      <td><%= f.label  'Not read' %></td>
+      <td><%= f.radio_button :have_read, false%></td>
+>>>>>>> 405331304489e579e5338186c0104e6dd494514b
       </tr>
 
       </table>

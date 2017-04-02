@@ -2,16 +2,12 @@
     <button class="mute">&#128263;</button>
     <button class="sound-on">&#128266;</button>
   </div>
-<div class = "bookshelf">
-         <div class ="welcome">
-          <h1 class="user">Hi, <%= @user.email %>!</h1>
 
 
-      </div>
-
-<div class ="shelf">
+<h1>Hi, <%= @user.email %>!</h1>
 
   <% if current_user == @user %>
+<<<<<<< HEAD
 
 <div class = "show-books">
       <% @books.each do |book| %>
@@ -27,6 +23,18 @@
 
     </div>
      <% end %>
+=======
+        <% @books.each do |book| %>
+         <% if book.have_read == false %>
+         <div class="have-read">
+           <%= link_to (image_tag(book.image)), book_path(book.id) %>
+        </div>
+
+      <% else %>
+        <div class="to-read">
+         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+        </div>
+        <% end %>
+>>>>>>> 405331304489e579e5338186c0104e6dd494514b
       <% end %>
   <% end %>
-</div>

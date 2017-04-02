@@ -29,6 +29,9 @@
              <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
 
             </div>
+            <div class ="book-edit">
+             <%= render "edit_form", book: @book %>
+             </div>
         </div>
     </div>
     <div id="book-reviews">

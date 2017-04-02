@@ -68,7 +68,11 @@ end
     @book = Book.find(params[:id])
   end
   def book_params
+<<<<<<< HEAD
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id, :read)
+=======
+    params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id, :have_read)
+>>>>>>> 405331304489e579e5338186c0104e6dd494514b
   end
 
 end
