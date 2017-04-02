@@ -4,7 +4,7 @@
     <title>Bison Bookshelf</title>
     <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,7 +25,7 @@
         <button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
         </div>
         <div class="button-nav">
-          <button><%= link_to "Your Bookself", user_path(current_user.id) %></button>
+          <button><%= link_to "Your Bookshelf", user_path(current_user.id) %></button>
         <% else %>
         <button><%= link_to('Login', new_user_session_path)  %></button>
       <% end %>

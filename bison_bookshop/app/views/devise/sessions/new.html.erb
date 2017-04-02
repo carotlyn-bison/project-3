@@ -1,19 +1,15 @@
 <div class="login-container">
 
 
-<div  class  ="form-container">
-  <h2 class  ="log"> <%= render "devise/shared/links" %></h2>
-  <p  class  ="notice"><%= notice %></p>
-  <p  class  ="alert"><%= alert %></p>
-
-
+<div  class="form-container">
+  <p class="login-hello">Welcome to Bison Bookshelf!</p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
     <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email %><br>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
     <div class="field">
-        <%= f.label :password %><br />
+        <%= f.label :password %><br>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
 
@@ -28,7 +24,9 @@
             <%= f.submit "Log in", class: 'btn' %>
               <% end %>
           </div>
-
+        <h2 class="log"> <%= render "devise/shared/links" %></h2>
+          <p  class="notice"><%= notice %></p>
+  <p  class="alert"><%= alert %></p>
         </div>
 
 
@@ -37,4 +35,3 @@
 
 
   </div>
-</div>

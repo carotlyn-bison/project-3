@@ -10,7 +10,7 @@ $(document).ready(function() {
         $('.search-results').empty();
         $('.search-results').attr('data-id', data.user_id);
         loop(data.response_data.items);
-        $('.search-container').css('background-color', 'rgba(0,0,0, 0.5)');
+        $('.search-container').css('background-color', 'rgba(250,250,250, 0.5)');
       },
       error: function(error) {
         console.log('AJAX GET Error: ', error)
@@ -45,7 +45,7 @@ $(document).ready(function() {
       newDiv.append(description);
       $('.search-results').append(newDiv);
       let save = $('<div>').addClass('save-button-div');
-      save.html($('<button></button>').text('Add to Bookshelf?')).click(function() {
+      save.html($('<button></button>').addClass('save-button').text('Add to Bookshelf?')).click(function() {
         saveBook(thing.volumeInfo.title, thing.volumeInfo.authors[0], thing.volumeInfo.imageLinks.thumbnail, thing.volumeInfo.description, thing.saleInfo.buyLink, $('.search-results').attr('data-id'));
       }) //end of save function
       newDiv.append(save)
