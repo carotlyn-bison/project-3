@@ -8,7 +8,7 @@
       <div class="title-author">
         <h1 class="book-title-show"><%= @book.title %></h1>
         <p>By: <%= @book.author %></p>
-        <p><% if @book.description? %>
+        <p class="description-show"><% if @book.description? %>
             <%= @book.description %>
               <% else %>
               No description avaliable.
@@ -18,7 +18,7 @@
       <div class="description-buy">
         <div class="image-single"><img src="<%= @book.image %>" /></div>
         <p class="buy-link-show"><% if @book.buy_link? %>
-            <button><%= link_to "buy this book?", @book.buy_link %></button>
+            <button><%= link_to "Purchase this book?", @book.buy_link %></button>
             <% else %>
             Sorry, this book is not available for purchase.
             <% end %></p>
@@ -27,33 +27,51 @@
             </div>
         </div>
     </div>
- <div id="book-reviews">
+    <div id="book-reviews">
 
-  <div class="review-form">
-    <%= render "reviews/form", review: @review %>
-  </div>
-  <div class="reviews">
-    <% @book.reviews.order(cached_votes_up: :desc).each do |review| %>
-    <div class="review">
-      <%= review.content %> <br>
-      <%= review.created_at %> <br>
-      <%= review.out_of_five %> /5
-
-      <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
-      <button><%= link_to like_path(review), method: :patch do %>
-        Like <%= review.get_upvotes.size %>
-      <% end %>
-      </button>
-      <button><%= link_to dislike_path(review), method: :patch do %>
-        Disike <%= review.get_downvotes.size %>
-      <% end %>
-      </button>
+      <div class="review-form">
+        <div class="review-form-show">
+          <%= render "reviews/form", review: @review %>
+        </div>
+      </div>
+      <div class="reviews">
+        <% @book.reviews.order(cached_votes_up: :desc).each do |review| %>
+        <div class="review">
+          <div>
+            <div class="review-content-show">Review: <%= review.content %></div>
+            <div>Rating: <% if review.out_of_five == 1 %>
+                            &#9733;&#9734;&#9734;&#9734;&#9734;
+                            <% elsif review.out_of_five == 2%>
+                            &#9733;&#9733;&#9734;&#9734;&#9734;
+                            <% elsif review.out_of_five == 3%>
+                            &#9733;&#9733;&#9733;&#9734;&#9734;
+                            <% elsif review.out_of_five == 4%>
+                            &#9733;&#9733;&#9733;&#9733;&#9734;
+                            <% elsif review.out_of_five == 5%>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            <% end %>
+            </div>
+            <div><%= review.created_at %></div>
+          </div>
+          <div>
+            <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button>
+            <% if current_user.id == review.user_id %>
+              <button><%= link_to 'Delete this Review?', review, method: :delete, data: {confirm: "Are you sure?"} %></button>
+            <% end %>
+          </div>
+          <div>
+            <button><%= link_to like_path(review), method: :patch do %>
+              Like <%= review.get_upvotes.size %>
+            <% end %>
+            </button>
+            <button><%= link_to dislike_path(review), method: :patch do %>
+              Disike <%= review.get_downvotes.size %>
+            <% end %>
+            </button>
+          <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button>
-    <% if current_user.id == review.user_id %>
-    <button><%= link_to 'Delete this Review?', review, method: :delete, data: {confirm: "Are you sure?"} %></button><br>
-    <% end %>
-    <% end %>
-    </div>
   </div>
-</div>
+</dsiv>
