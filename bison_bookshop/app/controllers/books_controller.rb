@@ -17,7 +17,6 @@ class BooksController < ApplicationController
     @review.book_id = @book.id
     @review.book_title = @book.title
     @review.user_id = current_user.id
-    @user_review = User.find(params[:id])
   end
   def edit
   end
