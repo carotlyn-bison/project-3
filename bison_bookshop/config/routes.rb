@@ -27,6 +27,13 @@ Rails.application.routes.draw do
   delete "/reviews/:id", to: "reviews#destroy" #no helper bc we're deleting
 
   get "/users/:id", to: "users#show", as: :user # user_path
+  #followers/following routes
+  #https://www.railstutorial.org/book/following_users
+  get "/users/:id/followers", to: "users#followers", as: :following_user
+  get "/users/:id/following", to: "users#following", as: :follows_user
+
+  post "/relationships", to: "relationships#create"
+  delete "/relationships/:id", to: "relationships#destroy"
 
 
 
