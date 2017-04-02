@@ -58,7 +58,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   def book_params
-    params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id)
+    params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id, :have_read)
   end
 
 end
