@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170402175257) do
     t.integer  "user_id"
     t.boolean  "read",        default: false
     t.integer  "book_id"
+    t.boolean  "have_read",   default: false
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
@@ -42,11 +43,12 @@ ActiveRecord::Schema.define(version: 20170402175257) do
     t.integer  "user_id"
     t.integer  "out_of_five"
     t.text     "content"
-    t.integer  "book_id"
     t.integer  "cached_votes_total", default: 0
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "book_id"
+    t.string   "book_title"
     t.index ["book_id"], name: "index_reviews_on_book_id", using: :btree
     t.index ["cached_votes_down"], name: "index_reviews_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_reviews_on_cached_votes_score", using: :btree

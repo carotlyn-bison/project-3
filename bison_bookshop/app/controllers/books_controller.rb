@@ -12,9 +12,20 @@ class BooksController < ApplicationController
   end
   def show
     @user = current_user
+    @reviews = Review.where(:book_title => @book.title)
     @review = Review.new
-    @review.book_id=@book.id
+    @review.book_id = @book.id
+    @review.book_title = @book.title
     @review.user_id = current_user.id
+  end
+  def edit
+  end
+  def update
+    if @book.update(book_params)
+      redirect_back fallback_location: user_path(current_user)
+    else
+      flash[:alert] = "Book Edit Error!"
+    end
   end
   def new
     @book = Book.new
@@ -24,7 +35,7 @@ class BooksController < ApplicationController
 def update
    if @book.update(book_params)
     puts "OK"
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user.id)
     else
       flash[:alert] = "Book Update error"
   end
@@ -34,14 +45,14 @@ end
     @book = Book.new(book_params)
     if @book.save
       puts "OK"
-      redirect_to user_path(@user)
+      redirect_to user_path(@user.id)
     else
       flash[:alert] = "Book Creation Error!"
     end
   end
   def destroy
     if @book.destroy
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user.id)
     else
       flash[:alert] = "Book Destroy Error!"
     end
