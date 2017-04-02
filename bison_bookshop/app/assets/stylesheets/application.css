@@ -52,6 +52,19 @@ button a{
   text-decoration: none;
 }
 
+.review-button {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 2px 2px #313745;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.review-button:hover{
+  background-color: #313745;
+  box-shadow: 2px 2px grey;
+  font-family: 'Libre Baskerville', serif;
+}
 
 .header{
 display: flex;
@@ -324,13 +337,29 @@ label{
   margin: 20px;
 }
 
+#book-and-reviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .single-book {
   background-color: rgba(0,0,0,0.5);
   box-shadow: 2px 2px rgba(150,150,150,0.7);
   display: flex;
   flex-direction: row;
-  margin: 10px auto;
-  padding: 15px;
+  justify-content: space-around;
+  margin: 0 10px 0 0;
+  padding: 10px;
+  width: 57%;
+}
+
+#book-reviews {
+  margin: 0 0 0 10px;
+  padding: 10px;
+  width: 37%;
 }
 
 .buy-link-show {
@@ -339,11 +368,10 @@ label{
 }
 
 .title-author {
-  width: 40%;
+  width: 60%;
 }
 
 .image-single {
-  width: 20%;
 }
 
 .image-single img {
@@ -352,12 +380,20 @@ label{
 }
 
 .description-buy {
-  width: 40%;
+  width: 35%;
 }
 
 .book-delete {
   margin: 20px 0 0 0;
 
+}
+
+.book-title-show {
+  text-shadow: 2px 2px rgba(150,150,150, 0.5);
+}
+
+.review-content-show {
+  font-size: 16px;
 }
 
 /*Review Form*/
