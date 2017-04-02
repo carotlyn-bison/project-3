@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   has_and_belongs_to_many :books
   has_many :reviews
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 end
