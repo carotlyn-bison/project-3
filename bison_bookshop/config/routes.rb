@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   get "reviews/:id/edit", to: "reviews#edit", as: :edit_review
   post "/reviews", to: "reviews#create" #no helper bc we're posting
   patch "/reviews/:id", to: "reviews#update" #no helper bc we're patching
+  #upvote/downvote routes
+  #https://github.com/ryanto/acts_as_votable
+  #http://www.mattmorgante.com/technology/votable
+  patch "like/:id", to: "reviews#upvote", as: :like
+  patch "dislike/:id", to: "reviews#downvote", as: :dislike
   delete "/reviews/:id", to: "reviews#destroy" #no helper bc we're deleting
 
   get "/users/:id", to: "users#show", as: :user # user_path

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update, :upvote, :downvote, :destroy]
   def show
   end
   def new
@@ -29,6 +29,17 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = "Review Destroy Error!"
     end
+  end
+  #see routes file for relevance
+  #https://github.com/ryanto/acts_as_votable
+  #http://www.mattmorgante.com/technology/votable
+  def upvote
+    @review.upvote_by current_user
+    redirect_back fallback_location: :book
+  end
+  def downvote
+    @review.downvote_by current_user
+    redirect_back fallback_location: :book
   end
   private
   def set_review
