@@ -19,6 +19,16 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
   end
+  def edit
+  end
+def update
+   if @book.update(book_params)
+    puts "OK"
+      redirect_to user_path(@user)
+    else
+      flash[:alert] = "Book Update error"
+  end
+end
   def create
     @user = current_user
     @book = Book.new(book_params)
@@ -47,7 +57,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   def book_params
-    params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id)
+    params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id, :book_id, :read)
   end
 
 end
