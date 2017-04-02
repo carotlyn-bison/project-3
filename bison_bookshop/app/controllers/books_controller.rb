@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   end
   def destroy
     if @book.destroy
-      redirect_to :root
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Book Destroy Error!"
     end
