@@ -9,7 +9,7 @@
       <p><%= f.number_field :out_of_five, :size => 4, maxlength: '1', max: '5', min: '0' %> /5</p>
       <%= f.hidden_field :book_id %>
       <%= f.hidden_field :user_id %>
-      <%= f.hidden_field :book_title, value: @book.title %>
+      <%= f.hidden_field :book_title %>
       <%= f.submit 'Post Review', :class => 'review-button' %>
     </div>
   </div>
