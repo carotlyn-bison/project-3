@@ -1,22 +1,37 @@
+<div id="userShowContainer">
   <div class="music-div">
     <button class="mute">&#128263;</button>
     <button class="sound-on">&#128266;</button>
   </div>
 
+  <div class="user-email">
+    <h1>Hi, <%= @user.email %>!</h1>
+  </div>
 
-<h1>Hi, <%= @user.email %>!</h1>
-
-  <% if current_user == @user %>
+  <div class="bookshelfs">
+    <% if current_user == @user %>
+        <div class="have-read">
+        <h1>Have Read:</h1>
         <% @books.each do |book| %>
          <% if book.have_read == false %>
-         <div class="have-read">
+         <div class="have-read-books books-user">
            <%= link_to (image_tag(book.image)), book_path(book.id) %>
-        </div>
-
-      <% else %>
-        <div class="to-read">
-         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+           <div class="shelf-img"></div>
         </div>
         <% end %>
       <% end %>
-  <% end %>
+      </div>
+      <div class="to-read">
+      <h1>To Read:</h1>
+      <% @books.each do |book| %>
+        <% if book.have_read == true %>
+        <div class="to-read-books books-user">
+         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+         <div class="shelf-img"></div>
+        </div>
+        <% end %>
+      <% end %>
+      </div>
+   <% end %>
+   </div>
+</div>
