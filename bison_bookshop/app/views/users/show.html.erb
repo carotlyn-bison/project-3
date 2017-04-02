@@ -12,19 +12,21 @@
 <div class ="shelf">
 
   <% if current_user == @user %>
+
 <div class = "show-books">
       <% @books.each do |book| %>
-       <div class ="have-read">
+      <% if book.read == false %>
+       <div class ="to-read">
          <%= link_to (image_tag(book.image)), book_path(book.id) %>
-
       </div>
-      <% end %>
+<% else %>
+     <div class ="have-read">
 
-      <% @books.each do |book| %>
-     <div class ="to-read">
+
        <%= link_to (image_tag(book.image)), book_path(book.id) %>
 
     </div>
+     <% end %>
       <% end %>
   <% end %>
 </div>

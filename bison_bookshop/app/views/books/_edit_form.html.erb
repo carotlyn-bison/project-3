@@ -2,18 +2,18 @@
   <div class="book-form">
     <div class="read">
       <%= f.label :read %><br>
-      <table>
+      <table class "doodoo">
       <tr>
-      <td><%= f.label 'I have read this book', 'read' %></td>
+      <td><%= f.label 'read' %></td>
       <td><%= f.radio_button :read, :checked => true%></td>
       </tr>
       <tr>
-      <td><%= f.label 'I gotta read this', 'Not read' %></td>
+      <td><%= f.label  'Not read' %></td>
       <td><%= f.radio_button :read, false%></td>
       </tr>
-      <%= f.submit %>
-      </table>
 
+      </table>
+  <%= f.submit %>
     </div>
   </div>
   <% end %>

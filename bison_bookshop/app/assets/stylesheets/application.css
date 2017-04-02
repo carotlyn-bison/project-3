@@ -362,7 +362,7 @@ animation-timing-function: linear;
 
 label{
     font-family: Rajdhani;
-    color: #555;
+    color: #fff;
     display: inline-block;
     margin-left: 18px;
     padding-top: 10px;
@@ -633,3 +633,10 @@ justify-content: space-between;
 .rf {
   margin: 0 10px 0 10px;
 }
+
+/*have read to read button */
+.doodoo{
+  font-size: 12px;
+  color: white;
+}
+
