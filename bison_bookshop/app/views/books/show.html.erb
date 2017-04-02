@@ -31,7 +31,7 @@
   <%= render "reviews/form", review: @review %>
 </div>
 <div class="reviews">
-<% @book.reviews.each do |review| %>
+<% @book.reviews.order(cached_votes_up: :desc).each do |review| %>
 <div class="review">
 <%= review.content %> <br>
 <%= review.created_at %> <br>
