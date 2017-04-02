@@ -32,9 +32,7 @@ Rails.application.routes.draw do
   get "/users/:id/followers", to: "users#followers", as: :following_user
   get "/users/:id/following", to: "users#following", as: :follows_user
 
+  get "/relationships/:id", to: "relationships#show", as: :relationship
   post "/relationships", to: "relationships#create"
   delete "/relationships/:id", to: "relationships#destroy"
-
-
-
 end
