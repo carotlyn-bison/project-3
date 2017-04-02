@@ -2,14 +2,14 @@
   <div class="review-form">
     <div class="rf-content rf">
       <%= f.label :content %><br>
-      <p><%= f.text_area :content, cols: 40, rows: 10 %></p>
+      <p><%= f.text_area :content, cols: 35, rows: 8 %></p>
     </div>
     <div class="rf-outoffive rf">
       <%= f.label "Rating:" %>
-      <p><%= f.text_field :out_of_five %> /5</p>
+      <p><%= f.text_field :out_of_five, :size => 5 %> /5</p>
       <%= f.hidden_field :book_id %>
       <%= f.hidden_field :user_id %>
-      <%= f.submit %>
+      <%= f.submit 'Post Review', :class => 'review-button' %>
     </div>
   </div>
   <% end %>
