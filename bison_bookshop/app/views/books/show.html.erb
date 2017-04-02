@@ -36,7 +36,14 @@
 <%= review.created_at %> <br>
 <%= review.out_of_five %> /5
 <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button><br>
+<button><%= link_to like_path(review), method: :patch do %>
+  Like <%= review.get_upvotes.size %>
+<% end %>
+</button>
+<button><%= link_to like_path(review), method: :patch do %>
+  Disike <%= review.get_downvotes.size %>
+<% end %>
+</button>
 <% end %>
 </div>
 </div>
-
