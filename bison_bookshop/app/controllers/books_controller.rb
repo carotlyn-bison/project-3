@@ -26,6 +26,7 @@ class BooksController < ApplicationController
       redirect_back fallback_location: user_path(current_user)
     else
       flash[:alert] = "Book Edit Error!"
+    end
   end
   def new
     @book = Book.new
