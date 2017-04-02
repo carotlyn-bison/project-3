@@ -16,6 +16,14 @@ class BooksController < ApplicationController
     @review.book_id=@book.id
     @review.user_id = current_user.id
   end
+  def edit
+  end
+  def update
+    if @book.update(book_params)
+      redirect_back fallback_location: user_path(current_user)
+    else
+      flash[:alert] = "Book Edit Error!"
+  end
   def new
     @book = Book.new
   end
