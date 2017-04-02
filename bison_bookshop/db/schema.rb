@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402034715) do
+ActiveRecord::Schema.define(version: 20170402164534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "title"
     t.string   "author"
     t.string   "buy_link"
     t.text     "description"
     t.string   "image"
     t.integer  "user_id"
+    t.boolean  "have_read",   default: false
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
@@ -40,11 +41,12 @@ ActiveRecord::Schema.define(version: 20170402034715) do
     t.integer  "user_id"
     t.integer  "out_of_five"
     t.text     "content"
-    t.integer  "book_id"
     t.integer  "cached_votes_total", default: 0
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "book_id"
+    t.string   "book_title"
     t.index ["book_id"], name: "index_reviews_on_book_id", using: :btree
     t.index ["cached_votes_down"], name: "index_reviews_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_reviews_on_cached_votes_score", using: :btree
