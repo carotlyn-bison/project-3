@@ -37,6 +37,7 @@ button {
   background-color: grey;
   border-radius: 10px;
   box-shadow: 2px 2px #313745;
+  color: white;
   font-family: 'Libre Baskerville', serif;
 }
 
@@ -128,6 +129,7 @@ background-color: rgba(95, 158, 160, 0.31);
 }
 
 .search-container {
+  border-radius: 10px;
   position: relative;
   width: 90%;
   height: 400px;
@@ -346,7 +348,8 @@ label{
 }
 
 .single-book {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(71,78,96,0.9);
+  border-radius: 10px;
   box-shadow: 2px 2px rgba(150,150,150,0.7);
   display: flex;
   flex-direction: row;
@@ -380,7 +383,18 @@ label{
 }
 
 .description-buy {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0 0;
   width: 35%;
+}
+
+.description-show {
+  color: rgb(200,200,200);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 22px;
 }
 
 .book-delete {
@@ -396,12 +410,34 @@ label{
   font-size: 16px;
 }
 
+.review-form-show {
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 2px 2px rgba(150,150,150,0.7);
+  border-radius: 10px;
+  padding: 10px;
+}
+
 /*Review Form*/
 
 .review-form {
   align-items: flex-start;
+  color: white;
   display: flex;
   flex-direction: row;
+}
+
+.review-form label {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+#review_content {
+  color: #474e60;
+}
+
+#review_out_of_five {
+  color: #474e60;
 }
 
 .rf {

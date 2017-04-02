@@ -12,9 +12,12 @@ class BooksController < ApplicationController
   end
   def show
     @user = current_user
+    @reviews = Review.where(:book_title => @book.title)
     @review = Review.new
-    @review.book_id=@book.id
+    @review.book_id = @book.id
+    @review.book_title = @book.title
     @review.user_id = current_user.id
+    @user_review = User.find(params[:id])
   end
   def new
     @book = Book.new
