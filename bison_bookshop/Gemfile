@@ -7,11 +7,15 @@ end
 
 #dotenv-rails added by Jason
 gem 'dotenv-rails', groups: [:development, :test]
-#google books gem added by Jason
-# fuck googlebooks
-# gem 'googlebooks'
 
 gem 'httparty'
+
+#here's the voting gem i found -Jason
+#https://github.com/ryanto/acts_as_votable
+#here's a tutorial for it
+#http://www.mattmorgante.com/technology/votable
+gem 'acts_as_votable', '~> 0.10.0'
+
 
 #gem devise added by Kait
 gem 'devise'
