@@ -31,7 +31,7 @@
   <%= render "reviews/form", review: @review %>
 </div>
 <div class="reviews">
-<% @book.reviews.each do |review| %>
+<% @book.reviews.order(cached_votes_up: :desc).each do |review| %>
 <div class="review">
 <%= review.content %> <br>
 <%= review.created_at %> <br>
@@ -47,7 +47,10 @@
 <% end %>
 </button>
 </div>
-
+<button><%= link_to 'Edit this Review?', edit_review_path(review) %></button>
+<% if current_user.id == review.user_id %>
+<button><%= link_to 'Delete this Review?', review, method: :delete, data: {confirm: "Are you sure?"} %></button><br>
+<% end %>
 <% end %>
 </div>
 </div>
