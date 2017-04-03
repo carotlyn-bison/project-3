@@ -19,7 +19,9 @@
             Sorry, this book is not available for purchase.
             <% end %></p>
             <div class="book-edit-div">
+              <% if current_user.id == @user.id %>
              <%= render "edit_form", book: @book %>
+             <% end %>
              </div>
             <div class="book-delete">
               <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
