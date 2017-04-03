@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   patch "dislike/:id", to: "reviews#downvote", as: :dislike
   delete "/reviews/:id", to: "reviews#destroy" #no helper bc we're deleting
 
+  get "/users", to: "users#index" #, as: :users
   get "/users/:id", to: "users#show", as: :user # user_path
   #followers/following routes
   #https://www.railstutorial.org/book/following_users
