@@ -25,7 +25,7 @@
       <% @books.each do |book| %>
         <% if book.have_read == true %>
         <div class="to-read-books books-user">
-         <%= link_to (image_tag(book.image)), book_path(book.id), %>
+         <%= link_to (image_tag(book.image)), book_path(book.id) %>
          <div class="shelf-img"></div>
         </div>
         <% end %>
@@ -33,6 +33,12 @@
       </div>
    </div>
 </div>
-
+<% if current_user.id == @user.id %>
+<% current_user.feed.each do |item| %>
+<%= item.user.email %> said about "<%= item.book.title %>":
+<%= item.content %>
+and gave it <%= item.out_of_five %> stars out of five.
+<% end %>
+<% end %>
 <%= render "follow_form" %>
 <%= render "stats" %>
