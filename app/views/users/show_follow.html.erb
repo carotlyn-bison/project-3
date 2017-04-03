@@ -1,14 +1,16 @@
-<% provide(:title, @title) %>
-<div class="user-info">
-  <h1><%= @user.email %></h1>
+<div id="showFollow">
+  <% provide(:title, @title) %>
+  <div class="user-info info">
+    <h1><%= @user.email %></h1>
 
-  <%= render "stats" %>
-</div>
-<% if @users.any? %>
-<div class="follow-list">
-  <% @users.each do |user| %>
-  <%= link_to "Profile", user_path(user) %>
-  <%= user.email %>
+    <%= render "stats" %>
+  </div>
+  <% if @users.any? %>
+  <div class="follow-list info">
+    <% @users.each do |user| %>
+    <%= link_to "Profile:", user_path(user) %>
+    <%= user.email %>
+    <% end %>
+  </div>
   <% end %>
 </div>
-<% end %>
