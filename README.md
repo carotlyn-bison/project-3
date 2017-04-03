@@ -1,24 +1,35 @@
-# README
+# Turtle Project Three: Bison Bookshelf
+## by Kaitlyn Mohr, Caroline Guntert, Bilal Khalid, and Jason Andrada
+GA Group Project.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku App
+[Heroku](pure-crag-53989.herokuapp.com)
 
-Things you may want to cover:
+## Expected Behaviors
+* Full CRUD functionality
+* Operational API calls to our own API and to the Google Books API
+* MVC architecture using modularized models, controllers and views
+* ReSTful routing convention
+* Bookshelving app to keep track of a reading list
 
-* Ruby version
+## Persisting Problems
+* Google Books Gem was a bust
 
-* System dependencies
+## Techs used
+* Front End: HTML, CSS, JavaScript
+    * for JavaScript, specifically focusing on AJAX (therefore jQuery by extension)
+* Back End: Ruby on Rails
+* Database: pSQL
+* act_as_votable gem as an upvote/downvote tool to keep track of voting
+* Devise for authentication
 
-* Configuration
+## Wireframes
 
-* Database creation
+* [Landing Page](https://wireframe.cc/gUwXmX)
+The rest of our wireframes can be found [here](https://docs.google.com/presentation/d/16tnBQaegynIbd8S6RoYSeEVzpPpXogqdN1Tt8K-EPcg/edit#slide=id.g1d56b32ffa_0_67)
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## User Stories
+* As someone who hasn't played Magic: the Gathering, I'd like to look at all of the cards and see which ones I like
+* As someone who has played M:tG, I want to keep up with all of the latest cards
+* As someone who just likes cool art, I want to look at all of the awesome Magic artwork
