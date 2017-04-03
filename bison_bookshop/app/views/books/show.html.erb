@@ -1,2 +1,76 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div id="bookShowContainer">
+  <div id="book-and-reviews">
+    <div class="single-book">
+      <div class="title-author">
+        <h1 class="book-title-show"><%= @book.title %></h1>
+        <p>By: <%= @book.author %></p>
+        <p class="description-show"><% if @book.description? %>
+            <%= @book.description %>
+              <% else %>
+              No description avaliable.
+              <% end %>
+        </p>
+      </div>
+      <div class="description-buy">
+        <div class="image-single"><img src="<%= @book.image %>" /></div>
+        <p class="buy-link-show"><% if @book.buy_link? %>
+            <button><%= link_to "Purchase this book?", @book.buy_link %></button>
+            <% else %>
+            Sorry, this book is not available for purchase.
+            <% end %></p>
+            <div class="book-delete">
+              <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+            </div>
+            <div class="book-edit-div">
+             <%= render "edit_form", book: @book %>
+             </div>
+        </div>
+    </div>
+    <div id="book-reviews">
+
+      <div class="review-form">
+        <div class="review-form-show">
+          <%= render "reviews/form", review: @review %>
+        </div>
+      </div>
+      <div class="reviews">
+        <% @reviews.order(cached_votes_up: :desc).each do |review| %>
+        <div class="review">
+          <div>
+            <div class="review-content-show"><span class="reviews-title">Review from <%= review.user.email %>:</span><br> <%= review.content %></div>
+            <div><span class="reviews-title">Rating:</span><br> <% if review.out_of_five == 1 %>
+                            &#9733;&#9734;&#9734;&#9734;&#9734;
+                            <% elsif review.out_of_five == 2%>
+                            &#9733;&#9733;&#9734;&#9734;&#9734;
+                            <% elsif review.out_of_five == 3%>
+                            &#9733;&#9733;&#9733;&#9734;&#9734;
+                            <% elsif review.out_of_five == 4%>
+                            &#9733;&#9733;&#9733;&#9733;&#9734;
+                            <% elsif review.out_of_five == 5%>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            <% end %>
+            </div>
+            <div class="time"><%= review.created_at.strftime("%d-%m-%Y, %I:%M") %></div>
+          </div>
+          <div>
+            <button class="thumbs"><%= link_to like_path(review), method: :patch do %>
+              <i class="fa fa-thumbs-up"></i> <%= review.get_upvotes.size %>
+            <% end %>
+            </button>
+            <button class="thumbs"><%= link_to dislike_path(review), method: :patch do %>
+              <i class="fa">&#xf165;</i> <%= review.get_downvotes.size %>
+            <% end %>
+            </button>
+          </div>
+          <div class="review-buttons">
+            <% if current_user.id == review.user_id %>
+              <button><%= link_to 'Edit this Review?', edit_review_path(review) %></button>
+              <button><%= link_to 'Delete this Review?', review, method: :delete, data: {confirm: "Are you sure?"} %></button>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

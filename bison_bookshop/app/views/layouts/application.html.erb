@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BisonBookshelf</title>
+    <title>Bison Bookshelf</title>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
-      <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+<body>
+<nav>
+  <header class="title">Bison Bookshelf </header>
+  <div class="button-div">
+    <div class="button-nav">
+      <button onClick="location.replace('/books')"><%= link_to "Home", books_path %></button>
+    </div>
+
+    <div class="button-nav">
+      <% if user_signed_in? %>
+        <button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+        </div>
+        <div class="button-nav">
+          <button><%= link_to "Your Bookshelf", user_path(current_user.id) %></button>
+        <% else %>
+        <button><%= link_to('Login', new_user_session_path)  %></button>
+      <% end %>
+    </div>
+      <div class="button-nav">
+      <button class="mute">&#128263;</button>
+      <button class="sound-on">&#128266;</button>
+    </div>
+  </div>
+</nav>
 
     <%= yield %>
   </body>

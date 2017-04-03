@@ -1,46 +1,51 @@
 class ReviewsController < ApplicationController
-    before_action :set_review, only: [:edit, :update, :destroy]
-
-
- def new
-    #allows us to pre-set the post_id for any new comments that we make
-    @review = Review.new
-    @review.book_id = Book.show.id
+  before_action :set_review, only: [:show, :edit, :update, :upvote, :downvote, :destroy]
+  def show
   end
-
-
-
-
+  def new
+    @review = Review.new
+  end
   def create
     @review = Review.new(review_params)
     if @review.save
-      # refresh the page if the  save is sucessfull
-      redirect_to :back
+      redirect_back fallback_location: :books
+      puts "OK"
     else
-
-
+      flash[:alert] = "Review Creation Error!"
     end
   end
-
-   def update
+  def edit
+  end
+  def update
     if @review.update(review_params)
       redirect_to :book
     else
-      render :edit
+      flash[:alert] = "Review Edit Error!"
     end
   end
   def destroy
-    if @review.delete
-      #refresh the page on successful delete
-      redirect_to :back
+    if @review.destroy
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = "Review Destroy Error!"
     end
   end
-  private
-  def review_params
-    params.require(:review).permit(:review, :book_id)
+  #see routes file for relevance
+  #https://github.com/ryanto/acts_as_votable
+  #http://www.mattmorgante.com/technology/votable
+  def upvote
+    @review.upvote_by current_user
+    redirect_back fallback_location: :book
   end
-  def set_comment
+  def downvote
+    @review.downvote_by current_user
+    redirect_back fallback_location: :book
+  end
+  private
+  def set_review
     @review = Review.find(params[:id])
   end
+  def review_params
+    params.require(:review).permit(:user_id, :out_of_five, :content, :book_id, :book_title)
+  end
 end
-

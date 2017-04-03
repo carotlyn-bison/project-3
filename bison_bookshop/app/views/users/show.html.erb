@@ -1,4 +1,44 @@
-<h1>User Page:</h1>
-<div>
-<p>Email: <%= @user.email %></p>
+<div id="userShowContainer" class="bg-img-book">
+
+  <div class="user-email">
+    <h1>Hi, <%= @user.email %>!</h1>
+  </div>
+
+  <div class="bookshelfs">
+        <div class="have-read shelf">
+        <h1>Have Read:</h1>
+        <% @books.each do |book| %>
+         <% if book.have_read == false %>
+         <div class="have-read-books books-user">
+           <%= link_to (image_tag(book.image)), book_path(book.id) %>
+           <div class="shelf-img"></div>
+        </div>
+        <% end %>
+      <% end %>
+      </div>
+      <div class="to-read shelf">
+      <h1>To Read:</h1>
+      <% @books.each do |book| %>
+        <% if book.have_read == true %>
+        <div class="to-read-books books-user">
+         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+         <div class="shelf-img"></div>
+        </div>
+        <% end %>
+      <% end %>
+      </div>
+      <div>
+     <%= render "follow_form" %>
+      <%= render "stats" %>
+   </div>
+   </div>
 </div>
+<% if current_user.id == @user.id %>
+<% current_user.feed.each do |item| %>
+<%= item.user.email %> said about "<%= item.book.title %>":
+<%= item.content %>
+and gave it <%= item.out_of_five %> stars out of five.
+<% end %>
+<% end %>
+<%= render "follow_form" %>
+<%= render "stats" %>

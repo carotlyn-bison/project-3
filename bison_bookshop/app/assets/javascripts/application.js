@@ -14,12 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(document).ready (() => {
-
+$(document).ready(() => {
   console.log('YO BOOKS!');
 
+$('.mute').on('click', function(e){
+  e.preventDefault();
+  $('video').prop('muted', true);
+});
 
+$('.sound-on').on('click', function(e){
+  e.preventDefault();
+  $('video').prop('muted', false);
+});
 
 
 });
