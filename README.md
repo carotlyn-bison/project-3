@@ -3,7 +3,7 @@
 GA Group Project.
 
 ## Heroku App
-[Heroku](bison-bookshelf.herokuapp.com)
+[Heroku](http://bison-bookshelf.herokuapp.com/users/sign_in)
 
 ## Expected Behaviors
 * Full CRUD functionality
