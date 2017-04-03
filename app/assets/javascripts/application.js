@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 $(document).on("turbolinks:load", function() {
-  console.log('YO BOOKS!');
   $('.mute').on('click', function(e) {
     e.preventDefault();
     $('video').prop('muted', true);
@@ -24,4 +23,7 @@ $(document).on("turbolinks:load", function() {
     e.preventDefault();
     $('video').prop('muted', false);
   });
+  $('.logo').on('click', function() {
+    location.replace('/books')
+  })
 });
