@@ -2,7 +2,9 @@
   <h1>See Other Users Bookselfs:</h1>
   <% @users.each do |user| %>
     <div>
-      <p class="user-index">	&#128214; <%= link_to user.email, user_path(user.id), class: "user-index" %></p>
+      <p class="user-index">	&#128214; <%= link_to user.email, user_path(user.id), class: "user-index" %> <% if current_user.email == user.email %>
+      (You)
+      <% end %></p> 
     </div>
   <% end %>
 </div>
