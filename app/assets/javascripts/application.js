@@ -23,7 +23,4 @@ $(document).on("turbolinks:load", function() {
     e.preventDefault();
     $('video').prop('muted', false);
   });
-  $('.logo').on('click', function() {
-    location.replace('/books')
-  })
 });
