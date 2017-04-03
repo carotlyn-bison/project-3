@@ -18,12 +18,12 @@
             <% else %>
             Sorry, this book is not available for purchase.
             <% end %></p>
-            <div class="book-delete">
-              <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
-            </div>
             <div class="book-edit-div">
              <%= render "edit_form", book: @book %>
              </div>
+            <div class="book-delete">
+              <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+            </div>
         </div>
     </div>
     <div id="book-reviews">
@@ -37,7 +37,7 @@
         <% @reviews.order(cached_votes_up: :desc).each do |review| %>
         <div class="review">
           <div>
-            <div class="review-content-show"><span class="reviews-title">Review from <%= review.user.email %>:</span><br> <%= review.content %></div>
+            <div class="review-content-show"><span class="reviews-title">Review from <%= link_to review.user.email, user_path(review.user.id) %>:</span><br> <%= review.content %></div>
             <div><span class="reviews-title">Rating:</span><br> <% if review.out_of_five == 1 %>
                             &#9733;&#9734;&#9734;&#9734;&#9734;
                             <% elsif review.out_of_five == 2%>
