@@ -17,26 +17,26 @@ $(document).ready(function() {
       } //end of AJAX GET error
     }) //end of AJAX GET request
   }) //end of book search submit click listener
-  const loop = function(arr) {
+  var loop = function(arr) {
     arr.forEach(function(thing) {
-      let newDiv = $('<div>').addClass('search-result');
-      let title = $('<div>').addClass('title-div');
+      var newDiv = $('<div>').addClass('search-result');
+      var title = $('<div>').addClass('title-div');
       title.text(thing.volumeInfo.title);
       newDiv.append(title);
-      let author = $('<div>').addClass('author-div');
+      var author = $('<div>').addClass('author-div');
       author.text('By: ' + thing.volumeInfo.authors[0]);
       newDiv.append(author)
-      let image = $('<div>').addClass('image-div');
+      var image = $('<div>').addClass('image-div');
       image.html($("<img>").attr('src', thing.volumeInfo.imageLinks.thumbnail));
       newDiv.append(image);
-      let buyLink = $('<div>').addClass('buy-link-div');
+      var buyLink = $('<div>').addClass('buy-link-div');
       if (thing.saleInfo.buyLink) {
         buyLink.append($('<button></button>').html($("<a></a>").attr('href', thing.saleInfo.buyLink).text('Buy This Book')));
       } else {
         buyLink.css('font-style', 'italic').text('Sorry, this book is not available for purchase.');
       }
       newDiv.append(buyLink);
-      let description = $('<div>').addClass('description-div');
+      var description = $('<div>').addClass('description-div');
       if (thing.volumeInfo.description) {
         description.text(thing.volumeInfo.description.substring(0, 200) + '...');
       } else {
@@ -44,14 +44,14 @@ $(document).ready(function() {
       }
       newDiv.append(description);
       $('.search-results').append(newDiv);
-      let save = $('<div>').addClass('save-button-div');
+      var save = $('<div>').addClass('save-button-div');
       save.html($('<button></button>').addClass('save-button').text('Add to Bookshelf?')).click(function() {
         saveBook(thing.volumeInfo.title, thing.volumeInfo.authors[0], thing.volumeInfo.imageLinks.thumbnail, thing.volumeInfo.description, thing.saleInfo.buyLink, $('.search-results').attr('data-id'));
       }) //end of save function
       newDiv.append(save)
     }); //end of array.forEach
   } //end of loop function
-  const saveBook = function(title, author, image, description, buyLink, user_id) {
+  var saveBook = function(title, author, image, description, buyLink, user_id) {
     $.ajax({
       type: 'POST',
       url: '/books',
