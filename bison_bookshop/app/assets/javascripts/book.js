@@ -10,6 +10,7 @@ $(document).ready(function() {
         $('.search-results').empty();
         $('.search-results').attr('data-id', data.user_id);
         loop(data.response_data.items);
+
         $('.search-container').css('background-color', 'rgba(250,250,250, 0.5)');
       },
       error: function(error) {
