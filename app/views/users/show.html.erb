@@ -3,7 +3,7 @@
         <div class="have-read shelf">
         <h1>Have Read:</h1>
         <% @books.each do |book| %>
-         <% if book.have_read == false %>
+         <% if book.have_read == true %>
          <div class="have-read-books books-user">
            <div class="wiggle"><%= link_to (image_tag(book.image)), book_path(book.id) %></div>
            <div class="shelf-img"></div>
@@ -14,7 +14,7 @@
       <div class="to-read shelf">
       <h1>To Read:</h1>
       <% @books.each do |book| %>
-        <% if book.have_read == true %>
+        <% if book.have_read == false %>
         <div class="to-read-books books-user">
          <div class="wiggle"><%= link_to (image_tag(book.image)), book_path(book.id) %></div>
          <div class="shelf-img"></div>
