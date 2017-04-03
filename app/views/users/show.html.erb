@@ -28,7 +28,11 @@
        </div>
         <%= render "follow_form" %>
         <%= render "stats" %>
-        <%= link_to "Find other users!", users_path, class: "user-button"  %>
+        <div class="find-users">
+          <form action="/users">
+          <button class="review-button">Find other users!</button>
+        </form>
+        </div>
         <div class="reviews-feed">
           <p>Most Recent Reviews:</p>
           <% if current_user.id == @user.id %>
