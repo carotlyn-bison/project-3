@@ -1,8 +1,4 @@
 <div id="bookShowContainer">
-  <div class="music-div">
-      <button class="mute">&#128263;</button>
-      <button class="sound-on">&#128266;</button>
-  </div>
   <div id="book-and-reviews">
     <div class="single-book">
       <div class="title-author">
@@ -22,7 +18,14 @@
             <% else %>
             Sorry, this book is not available for purchase.
             <% end %></p>
+<<<<<<< HEAD
             <div class ="book-edit">
+=======
+            <div class="book-delete">
+              <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
+            </div>
+            <div class="book-edit-div">
+>>>>>>> d3516dab38b3ff52e694ffe99b9aeb076a09f058
              <%= render "edit_form", book: @book %>
              </div>
             <div class="book-delete">
@@ -43,7 +46,7 @@
         <% @reviews.order(cached_votes_up: :desc).each do |review| %>
         <div class="review">
           <div>
-            <div class="review-content-show"><span class="reviews-title">Review:</span><br> <%= review.content %></div>
+            <div class="review-content-show"><span class="reviews-title">Review from <%= review.user.email %>:</span><br> <%= review.content %></div>
             <div><span class="reviews-title">Rating:</span><br> <% if review.out_of_five == 1 %>
                             &#9733;&#9734;&#9734;&#9734;&#9734;
                             <% elsif review.out_of_five == 2%>

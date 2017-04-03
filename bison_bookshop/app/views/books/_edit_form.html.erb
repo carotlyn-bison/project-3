@@ -1,4 +1,6 @@
+<div class="book-edit">
 <%= form_for(book) do |f| %>
+<<<<<<< HEAD
   <div class="book-form">
     <div class="read">
 
@@ -15,4 +17,14 @@
   <%= f.submit %>
     </div>
   </div>
+=======
+    <div class="book-edit-title">
+      <%= f.label "Have your read this book?" %></div>
+      <%= f.radio_button :have_read, :checked => true%>
+      <%= f.label 'Yes!' %><br>
+      <%= f.radio_button :have_read, false%>
+      <%= f.label  'No but I want to!' %><br>
+      <%= f.submit "Bookshelf This!", :class => 'review-button' %>
+>>>>>>> d3516dab38b3ff52e694ffe99b9aeb076a09f058
   <% end %>
+</div>
