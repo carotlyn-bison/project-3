@@ -1,4 +1,4 @@
-<div id="userShowContainer">
+<div id="userShowContainer" class="bg-img-book">
   <div class="music-div">
     <button class="mute">&#128263;</button>
     <button class="sound-on">&#128266;</button>
@@ -10,7 +10,7 @@
 
   <div class="bookshelfs">
     <% if current_user == @user %>
-        <div class="have-read">
+        <div class="have-read shelf">
         <h1>Have Read:</h1>
         <% @books.each do |book| %>
          <% if book.have_read == false %>
@@ -21,12 +21,12 @@
         <% end %>
       <% end %>
       </div>
-      <div class="to-read">
+      <div class="to-read shelf">
       <h1>To Read:</h1>
       <% @books.each do |book| %>
         <% if book.have_read == true %>
         <div class="to-read-books books-user">
-         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+         <%= link_to (image_tag(book.image)), book_path(book.id), %>
          <div class="shelf-img"></div>
         </div>
         <% end %>
