@@ -1,0 +1,619 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+body {
+    background: #313745;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+  align-items: center;
+  background-color: #474e60;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 2px 2px #313745;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+button:hover{
+  background-color: #313745;
+  box-shadow: 2px 2px grey;
+  font-family: 'Libre Baskerville', serif;
+}
+
+button a{
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  text-decoration: none;
+}
+
+.review-button {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 2px 2px #313745;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.review-button:hover{
+  background-color: #313745;
+  box-shadow: 2px 2px grey;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.header{
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 90px;
+background-color: rgba(95, 158, 160, 0.31);
+}
+
+.button-div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-nav {
+  margin: 0 5px 0 5px;
+}
+
+.music-div {
+  display: flex;
+  justify-content: flex-end;
+  z-index: -50;
+}
+
+.music-div button {
+  margin: 3px;
+}
+
+/* Book Index Page*/
+
+.title-input{
+    background-color: white;
+    padding: 1%;
+    margin: 1%;
+}
+
+.music-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.music-div-search button {
+  margin: 3px;
+}
+
+.search-form-book {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+
+.search-form-book button{
+  color: white;
+
+}
+
+#bookIndex {
+  margin: 20px;
+}
+
+.search-container {
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin: 30px auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.search-results {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+  .search-result {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    padding: 10px 20px 5px 20px;
+  }
+
+  .search-result img{
+    box-shadow: 2px 2px rgba(50,50,50,0.7);
+    margin: 10px 0 0 0;
+    max-height: 160px;
+  }
+
+.buy-link-div {
+  visibility: hidden;
+}
+
+.title-div {
+  color: #313745;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-shadow: 1px 1px grey;
+}
+
+.author-div {
+  font-size: 12px;
+  padding: 5px 0 0 0;
+}
+
+.description-div {
+  color: #313745;
+  font-size: 12px;
+  padding: 0 0 5px 0;
+  text-shadow: 1px 1px grey;
+}
+
+.save-button {
+  background-color: #313745;
+  border-radius: 10px;
+  box-shadow: 2px 2px rgba(250,250,250,0.5);
+  font-family: 'Libre Baskerville', serif;
+}
+
+.save-button:hover {
+  background-color: grey;
+  box-shadow: 2px 2px #313745;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+/* Video Styling for Book Index Page*/
+#video-container {
+  background-image: url(intro-stop.jpg);
+  left: 0%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  z-index: -100;
+}
+
+video {
+  position: absolute;
+  margin-top: -10px;
+  width: 102vw;
+  z-index: -100;
+}
+
+/*devise form styling*/
+.login {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: yellow;
+}
+
+input.form-control {
+    color: #777;
+    width: 78%;
+    height: 29%;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+    margin: 5px 0 0 0;
+}
+
+.form-control {
+  background-color: white;
+}
+
+p.alert{
+  color: red;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+#error_explanation{
+
+  color: red;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+
+/*.login-container {
+      position: absolute;
+      width: 340px;
+      height: 420px;
+      top: 50%;
+      left: 50%;
+      margin-top: -140px;
+      margin-left: -170px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    animation-name: bounceIn;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}*/
+
+.login-container {
+  animation-name: stretch;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: once;
+  animation-fill-mode: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 5% auto;
+  width: 340px;
+  /*animation-play-state: running;*/
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.01);
+    background-color: #fff;
+    border-radius: 12%;
+  }
+  50% {
+    background-color: #fff;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #fff;
+  }
+}
+
+
+
+
+.signup-container{
+  width: 360px;
+  margin: 5% auto;
+  padding: 5px 15px 15px 15px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+  animation-name: bounceIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.form-container {
+    margin: 15px;
+}
+
+.signup-form-container{
+  margin: 20px auto;
+}
+
+
+.btn{
+  font-family: Rajdhani;
+  font-size: 24px;
+  color: #555;
+}
+
+.log{
+  font-family: Rajdhani;
+  font-size: 24px;
+  color: #555;
+}
+
+label{
+    font-family: Rajdhani;
+    color: #555;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+.field{
+  margin: 10px;
+}
+
+.control-label{
+
+}
+
+.remember{
+  display: block;
+  margin: 10px;
+  }
+
+.actions {
+  margin: 10px 0 0 0;
+}
+
+.actions-new {
+  margin: 15px 15px 0px 15px;
+}
+
+h2 {
+  color: #313745;
+}
+
+.login-hello {
+  color: #313745;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+/*Review Edit Page*/
+
+#reviewEditContainer {
+  margin: 20px 20px 20px 30px;
+}
+
+/*Book Show Page*/
+
+#bookShowContainer {
+  margin: 20px 20px 20px 30px;
+}
+
+#book-and-reviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.single-book {
+  background-color: rgba(71,78,96,0.9);
+  border-radius: 10px;
+  box-shadow: 2px 2px rgba(150,150,150,0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10px 0 0;
+  padding: 10px;
+  width: 57%;
+}
+
+#book-reviews {
+  margin: 0 0 0 10px;
+  padding: 10px;
+  width: 37%;
+}
+
+.buy-link-show {
+  font-style: italic;
+  font-size: 10px;
+}
+
+.title-author {
+  width: 60%;
+}
+
+.image-single {
+}
+
+.image-single img {
+  box-shadow: 2px 2px rgba(250,250,250,0.5);
+  height: 250px;
+}
+
+.description-buy {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0 0;
+  width: 35%;
+}
+
+.description-show {
+  color: rgb(200,200,200);
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+
+.book-delete {
+  margin: 20px 0 0 0;
+
+}
+
+.book-title-show {
+  text-shadow: 2px 2px rgba(150,150,150, 0.5);
+}
+
+.review-content-show {
+  font-size: 16px;
+}
+
+.review-form-show {
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 2px 2px rgba(150,150,150,0.7);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.review {
+  background-color: rgba(250,250,250,0.4);
+  box-shadow: 2px 2px rgba(100,100,100,0.7);
+  border-radius: 10px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  width: 85%;
+}
+
+.thumbs {
+  color: white;
+}
+
+.time {
+  color: #313745;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.reviews-title {
+  color: #313745;
+  text-decoration: underline;
+}
+
+.review-buttons {
+  margin: 5px 0 0 0;
+}
+
+.book-edit-div {
+  background-color: rgba(250,250,250, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.book-edit {
+  padding: 10px;
+}
+
+.book-edit label{
+  color: #313745;
+
+}
+
+.book-edit-title label{
+  color: #313745;
+  text-decoration: underline;
+  text-shadow: 1px 1px rgba(150,150,150,0.5);
+}
+
+/*Review Form*/
+
+.review-form {
+  align-items: flex-start;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.review-form label {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+#review_content {
+  color: #474e60;
+}
+
+#review_out_of_five {
+  color: #474e60;
+}
+
+.rf {
+  margin: 0 10px 0 10px;
+}
+
+
+/*User Show Page*/
+
+#userShowContainer {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.bg-img-book {
+  background-image: url('http://i.imgur.com/l4053W3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bookshelfs {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
+.have-read {
+  background-color: rgba(250,250,250, 0.9);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  width: 35%;
+}
+
+.to-read {
+  background-color: rgba(250,250,250, 0.9);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  width: 35%;
+}
+
+.books-user img{
+  box-shadow: 2px 2px rgba(50,50,50, 0.5);
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.shelf-img {
+  background-image: url('http://i.imgur.com/EnBrEXx.png');background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 80%;
+}
+
+.shelf h1 {
+  color: #474e60;
+}
+
+
