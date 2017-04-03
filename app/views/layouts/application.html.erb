@@ -14,11 +14,12 @@
 
 <body>
 <nav>
-  <header class="title">Bison Bookshelf </header>
+  <div class="title-nav">
+  <a href="/books">
+    <div class="logo"></div>
+    </a>
+  </div>
   <div class="button-div">
-    <div class="button-nav">
-      <button onClick="location.replace('/books')"><%= link_to "Home", books_path %></button>
-    </div>
 
     <div class="button-nav">
       <% if user_signed_in? %>
