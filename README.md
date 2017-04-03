@@ -26,7 +26,7 @@ GA Group Project.
 ## Wireframes
 
 * [Landing Page](https://wireframe.cc/gUwXmX)
-The rest of our wireframes can be found [here](https://docs.google.com/presentation/d/16tnBQaegynIbd8S6RoYSeEVzpPpXogqdN1Tt8K-EPcg/edit#slide=id.g1d56b32ffa_0_67)
+* The rest of our wireframes can be found [here](https://docs.google.com/presentation/d/16tnBQaegynIbd8S6RoYSeEVzpPpXogqdN1Tt8K-EPcg/edit#slide=id.g1d56b32ffa_0_67)
 
 
 ## User Stories
