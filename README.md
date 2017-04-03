@@ -30,6 +30,6 @@ GA Group Project.
 
 
 ## User Stories
-* As someone who hasn't played Magic: the Gathering, I'd like to look at all of the cards and see which ones I like
-* As someone who has played M:tG, I want to keep up with all of the latest cards
-* As someone who just likes cool art, I want to look at all of the awesome Magic artwork
+* As someone who is an avid reader, I want all of my books in one place so that I can reference what I have lined up to read.”
+* As someone who doesn’t read very much, I want to look at the reviews others have posted so that I can be inspired.”
+* As someone looking for their next book, I want to peruse a digital library for stuff I’m interested in.”
