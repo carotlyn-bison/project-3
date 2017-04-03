@@ -658,6 +658,12 @@ h2 {
   color: rgb(200, 200, 200);
 }
 
+.prof-name {
+  font-size: 120%;
+  text-decoration: none;
+  max-width: 95%;
+}
+
 
 /*Following Pages*/
 
