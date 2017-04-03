@@ -18,14 +18,15 @@
             <% else %>
             Sorry, this book is not available for purchase.
             <% end %></p>
+            <% if current_user.id == @user.id %>
             <div class="book-edit-div">
-              <% if current_user.id == @user.id %>
              <%= render "edit_form", book: @book %>
-             <% end %>
+
              </div>
             <div class="book-delete">
               <button><%= link_to 'Take this book off your bookshelf?', @book, method: :delete, data: { confirm: "Are you sure?"} %></button>
             </div>
+            <% end %>
         </div>
     </div>
     <div id="book-reviews">
