@@ -18,7 +18,7 @@
             <% else %>
             Sorry, this book is not available for purchase.
             <% end %></p>
-            <% if current_user.id == @book.user.id %>
+            <% if current_user.id == @book.user_id %>
             <div class="book-edit-div">
              <%= render "edit_form", book: @book %>
 
