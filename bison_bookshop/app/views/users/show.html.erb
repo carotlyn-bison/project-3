@@ -1,22 +1,38 @@
+<div id="userShowContainer" class="bg-img-book">
   <div class="music-div">
     <button class="mute">&#128263;</button>
     <button class="sound-on">&#128266;</button>
   </div>
 
+  <div class="user-email">
+    <h1>Hi, <%= @user.email %>!</h1>
+  </div>
 
-<h1><%= @user.email %>!</h1>
-
+  <div class="bookshelfs">
+        <div class="have-read shelf">
+        <h1>Have Read:</h1>
         <% @books.each do |book| %>
          <% if book.have_read == false %>
-         <div class="have-read">
+         <div class="have-read-books books-user">
            <%= link_to (image_tag(book.image)), book_path(book.id) %>
-        </div>
-
-      <% else %>
-        <div class="to-read">
-         <%= link_to (image_tag(book.image)), book_path(book.id) %>
+           <div class="shelf-img"></div>
         </div>
         <% end %>
       <% end %>
+      </div>
+      <div class="to-read shelf">
+      <h1>To Read:</h1>
+      <% @books.each do |book| %>
+        <% if book.have_read == true %>
+        <div class="to-read-books books-user">
+         <%= link_to (image_tag(book.image)), book_path(book.id), %>
+         <div class="shelf-img"></div>
+        </div>
+        <% end %>
+      <% end %>
+      </div>
+   </div>
+</div>
+
 <%= render "follow_form" %>
 <%= render "stats" %>
