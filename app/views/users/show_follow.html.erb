@@ -9,7 +9,7 @@
   <div class="follow-list info">
     <% @users.each do |user| %>
     <%= link_to "Profile:", user_path(user) %>
-    <%= user.email %>
+    <%= user.email %><br>
     <% end %>
   </div>
   <% end %>
