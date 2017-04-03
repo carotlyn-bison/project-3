@@ -22,7 +22,7 @@ class BooksController < ApplicationController
   end
   def update
     if @book.update(book_params)
-      redirect_back fallback_location: user_path(current_user)
+      redirect_to user_path(current_user.id)
     else
       flash[:alert] = "Book Edit Error!"
     end
