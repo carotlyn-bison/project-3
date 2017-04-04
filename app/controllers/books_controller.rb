@@ -48,7 +48,7 @@ class BooksController < ApplicationController
     end
   end
   def search
-    @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+params[:title])
+    @response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q='+params[:title]+'&maxResults=20')
     #setting up an AJAX call in the backend.
     render json: {response_data: @response.parsed_response,
                   user_id: current_user.id}
@@ -60,5 +60,4 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :author, :buy_link, :description, :image, :user_id, :have_read)
   end
-
 end
