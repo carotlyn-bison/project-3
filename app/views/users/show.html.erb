@@ -36,7 +36,6 @@
         <div class="reviews-feed">
           <p>Most Recent Reviews:</p>
           <% if current_user.id == @user.id %>
-          <div>
           <ul class="user-feed">
             <% current_user.feed.each do |item| %>
             <li>
@@ -47,7 +46,6 @@
             </li>
             <% end %>
             </ul>
-            </div>
           <% end %>
         </div>
       </div>
