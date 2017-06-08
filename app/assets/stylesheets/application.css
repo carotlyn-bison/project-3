@@ -691,7 +691,7 @@ h2 {
 }
 
 .user-feed {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 
